@@ -4,7 +4,7 @@ Unsafe casts are useful to subvert the type system. The compiler types `expr` as
 
 Unsafe casts do not introduce any [dynamic](types-dynamic.md) types, as the following example shows:
 
-[include](assets/UnsafeCast.hx)
+{% codeasset haxe %}assets/UnsafeCast.hx{% endcodeasset %}
 
 Variable `i` is typed as `Int` and then assigned to variable `s` using the unsafe cast `cast i`. This causes `s` to be of an unknown type, a monomorph. Following the usual rules of [unification](type-system-unification.md), it can then be bound to any type, such as `String` in this example.
 

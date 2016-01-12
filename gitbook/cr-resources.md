@@ -18,7 +18,7 @@ The string after the **@** symbol is the **resource identifier** which is used i
 
 To retrieve the content of an embedded resource we use the static method **getString** of `haxe.Resource`, passing a **resource identifier** to it:
 
-[include](assets/ResourceGetString.hx)
+{% codeasset haxe %}assets/ResourceGetString.hx{% endcodeasset %}
 
 The code above will display the content of the **hello_message.txt** file that we included earlier using **welcome** as the identifier.
 
@@ -26,7 +26,7 @@ The code above will display the content of the **hello_message.txt** file that w
 
 While it's not recommended to embed large binary files in the application, it still may be useful to embed binary data. The binary representation of an embedded resource can be accessed using the static method **getBytes** of `haxe.Resource`:
 
-[include](assets/ResourceGetBytes.hx)
+{% codeasset haxe %}assets/ResourceGetBytes.hx{% endcodeasset %}
 
 The return type of **getBytes** method is `haxe.io.Bytes`, which is an object providing access to individual bytes of the data.
 

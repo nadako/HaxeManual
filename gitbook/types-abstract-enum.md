@@ -4,7 +4,7 @@
 
 By adding the `:enum` metadata to an abstract definition, that abstract can be used to define finite value sets:
 
-[include](assets/AbstractEnum.hx)
+{% codeasset haxe %}assets/AbstractEnum.hx{% endcodeasset %}
 
 The Haxe Compiler replaces all field access to the `HttpStatus` abstract with their values, as evident in the JavaScript output:
 

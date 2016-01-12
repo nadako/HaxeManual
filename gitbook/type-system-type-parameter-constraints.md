@@ -2,8 +2,7 @@
 
 Type parameters can be constrained to multiple types:
 
-[include](assets/Constraints.hx)
-
+{% codeasset haxe %}assets/Constraints.hx{% endcodeasset %}
 Type parameter `T` of method `test` is constrained to the types `Iterable<String>` and `Measurable`. The latter is defined using a [typedef](type-system-typedef.md) for convenience and requires compatible types to have a read-only [property](class-field-property.md) named `length` of type `Int`. The constraints then say that a type is compatible if
 
 * it is compatible with `Iterable<String>` and

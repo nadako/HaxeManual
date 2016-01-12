@@ -205,7 +205,7 @@ class LatexParser extends Parser<LexerTokenSource<LatexToken>, LatexToken> imple
 						}
 					}
 					if (validate) testCompile(s);
-					buffer.add('[include]($s)\n');
+					buffer.add('{% codeasset haxe %}$s{% endcodeasset %}');
 					// buffer.add("```haxe\n");
 					// buffer.add(f);
 					// buffer.add("\n```");

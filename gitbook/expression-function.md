@@ -2,7 +2,7 @@
 
 Haxe supports first-class functions and allows declaring local functions in expressions. The syntax follows [class field methods](class-field-method.md):
 
-[include](assets/LocalFunction.hx)
+{% codeasset haxe %}assets/LocalFunction.hx{% endcodeasset %}
 
 We declare `myLocalFunction` inside the [block expression](expression-block.md) of the `main` class field. It takes one argument `i` and adds it to `value`, which is defined in the outside scope.
 

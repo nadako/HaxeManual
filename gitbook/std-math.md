@@ -4,6 +4,6 @@ Haxe includes a floating point math library for some common mathematical operati
 
 Here are some example uses of the math library:  
 
-[include](assets/MathExample.hx)
+{% codeasset haxe %}assets/MathExample.hx{% endcodeasset %}
 
 See the [Math API](http://api.haxe.org/Math.html) for all available functions.

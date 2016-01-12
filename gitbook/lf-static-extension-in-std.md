@@ -2,7 +2,7 @@
 
 Several classes in the Haxe Standard Library are suitable for static extension usage. The next example shows the usage of `StringTools`:
 
-[include](assets/StaticExtension2.hx)
+{% codeasset haxe %}assets/StaticExtension2.hx{% endcodeasset %}
 
 While `String` does not have a `replace` functionality by itself, the `using StringTools` static extension provides one. As usual, the JavaScript output nicely shows the transformation:
 

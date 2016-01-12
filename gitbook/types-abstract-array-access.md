@@ -20,7 +20,7 @@ There are two kinds of array access methods:
 
 The methods `get` and `arrayWrite` seen above then allow the following usage:
 
-[include](assets/AbstractArrayAccess.hx)
+{% codeasset haxe %}assets/AbstractArrayAccess.hx{% endcodeasset %}
 
 At this point it should not be surprising to see that calls to the array access fields are inserted in the output:
 
@@ -33,7 +33,7 @@ console.log(map.get("foo")); // 1
 
 Due to a bug in Haxe versions before 3.2 the order of checked `:arrayAccess` fields was undefined. This was fixed for Haxe 3.2 so that the fields are now consistently checked from top to bottom:
 
-[include](assets/AbstractArrayAccessOrder.hx)
+{% codeasset haxe %}assets/AbstractArrayAccessOrder.hx{% endcodeasset %}
 
 The array access `a[0]` is resolved to the `getInt1` field, leading to lower case `f` being returned. The result might be different in Haxe versions before 3.2.
 

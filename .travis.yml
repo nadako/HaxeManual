@@ -4,9 +4,9 @@ node_js:
 install: npm install -g gitbook-cli
 before_script:
   - cd $TRAVIS_BUILD_DIR/gitbook
-  - gitbook install
+  - npm link $TRAVIS_BUILD_DIR/gitbook-plugin-codeasset
   - cd $TRAVIS_BUILD_DIR/gitbook-tutorial
-  - gitbook install
+  - npm link $TRAVIS_BUILD_DIR/gitbook-plugin-codeasset
 script:
   - cd $TRAVIS_BUILD_DIR/gitbook
   - gitbook build

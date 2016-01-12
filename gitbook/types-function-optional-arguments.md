@@ -2,8 +2,7 @@
 
 Optional arguments are declared by prefixing an argument identifier with a question mark `?`:
 
-[include](assets/OptionalArguments.hx)
-
+{% codeasset haxe %}assets/OptionalArguments.hx{% endcodeasset %}
 Function `test` has two optional arguments: `i` of type `Int` and `s` of `String`. This is directly reflected in the function type output by line 3. 
 This example program calls `test` four times and prints its return value.
 

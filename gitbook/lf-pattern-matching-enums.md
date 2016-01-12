@@ -2,7 +2,7 @@
 
 Enums can be matched by their constructors in a natural way:
 
-[include](assets/PatternMatching.hx)
+{% codeasset haxe %}assets/PatternMatching.hx{% endcodeasset %}
 
 The pattern matcher will check each case from top to bottom and pick the first one that matches the input value. The following manual interpretation of each case rule helps understanding the process:
 

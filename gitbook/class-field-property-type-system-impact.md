@@ -4,10 +4,10 @@ The presence of properties has several consequences on the type system. Most imp
 
 When using `get` or `set` access identifier, the compiler ensures that the getter and setter actually exists. The following problem does not compile:
 
-[include](assets/Property4.hx)
+{% codeasset haxe %}assets/Property4.hx{% endcodeasset %}
 
 The method `get_x` is missing, but it need not be declared on the class defining the property itself as long as a parent class defines it:
 
-[include](assets/Property5.hx)
+{% codeasset haxe %}assets/Property5.hx{% endcodeasset %}
 
 The `dynamic` access modifier works exactly like `get` or `set`, but does not check for the existence

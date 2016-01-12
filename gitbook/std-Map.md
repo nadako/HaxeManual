@@ -2,7 +2,7 @@
 
 A `Map` is a container composed of **key**, **value** pairs.  A `Map` is also commonly referred to as an associative array, dictionary, or symbol table. The following code gives a short example of working with maps:
 
-[include](assets/MapExample.hx)
+{% codeasset haxe %}assets/MapExample.hx{% endcodeasset %}
 
 Under the hood, a `Map` is an [abstract](types-abstract.md) type. At compile time, it gets converted to one of several specialized types depending on the **key** type:
 

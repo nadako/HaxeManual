@@ -8,6 +8,6 @@ A `List` is a **collection** for storing elements.  On the surface, a list is si
 4. A list can freely modify/add/remove elements while iterating over them.
 
 A simple example for working with lists:
-[include](assets/ListExample.hx)
+{% codeasset haxe %}assets/ListExample.hx{% endcodeasset %}
 
 See the [List API](http://api.haxe.org/List.html) for details about the list methods.

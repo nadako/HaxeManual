@@ -27,7 +27,7 @@ Structure  | instantiation  |
 
 With function type parameters being bound upon invocation, such a type parameter (if unconstrained) accepts any type. However, only one type per invocation is accepted. This can be utilized if a function has multiple arguments:
 
-[include](assets/FunctionTypeParameter.hx)
+{% codeasset haxe %}assets/FunctionTypeParameter.hx{% endcodeasset %}
 
 Both arguments `expected` and `actual` of the `equals` function have type `T`. This implies that for each invocation of `equals` the two arguments must be of the same type. The compiler admits the first call (both arguments being of `Int`) and the second call (both arguments being of `String`) but the third attempt causes a compiler error.
 

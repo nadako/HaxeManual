@@ -2,7 +2,7 @@
 
 Since `Expr` is compatible with any possible input, Haxe provides the type `haxe.macro.ExprOf<T>`. For the most part, this type is identical to `Expr`, but it allows constraining the type of accepted expressions. This is useful when combining macros with [static extensions](lf-static-extension.md):
 
-[include](assets/ExprOf.hx)
+{% codeasset haxe %}assets/ExprOf.hx{% endcodeasset %}
 
 The two direct calls to `identity` are accepted, even though the argument is declared as `ExprOf<String>`. It might come as a surprise that the `Int` `1` is accepted, but it is a logical consequence of what was explained about [macro arguments](macro-arguments.md): The argument expressions are never typed, so it is not possible for the compiler to check their compatibility by [unifying](type-system-unification.md).
 

@@ -19,7 +19,7 @@ When dealing with properties, it is important to understand the two kinds of acc
 
 Read access and write access are directly reflected in the syntax, as the following example shows:
 
-[include](assets/Property.hx)
+{% codeasset haxe %}assets/Property.hx{% endcodeasset %}
 
 For the most part, the syntax is similar to variable syntax, and the same rules indeed apply. Properties are identified by
 

@@ -2,8 +2,7 @@
 
 Classes may inherit from other classes, which in Haxe is denoted by the `extends` keyword:
 
-[include](assets/Point3.hx)
-
+{% codeasset haxe %}assets/Point3.hx{% endcodeasset %}
 This relation is often described as "is-a": Any instance of class `Point3` is also an instance of `Point`. `Point` is then known as the **parent class** of `Point3`, which is a **child class** of `Point`. A class may have many child classes, but only one parent class. The term "a parent class of class X" usually refers to its direct parent class, the parent class of its parent class and so on.
 
 The code above is very similar to the original `Point` class, with two new constructs being shown:

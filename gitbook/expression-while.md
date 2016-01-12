@@ -10,6 +10,6 @@ The condition expression has to be of type `Bool`.
 
 Upon each iteration, the condition expression is evaluated. If it evaluates to `false`, the loop stops, otherwise it evaluates the loop body expression.
 
-[include](assets/While.hx)
+{% codeasset haxe %}assets/While.hx{% endcodeasset %}
 
 This kind of while-loop is not guaranteed to evaluate the loop body expression at all: If the condition does not hold from the start, it is never evaluated. This is different for [do-while loops](expression-do-while.md).

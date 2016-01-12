@@ -1,0 +1,8 @@
+{
+  "name": "gitbook-plugin-codeasset",
+  "main": "index.js",
+  "version": "1.0.0",
+  "engines": {
+    "gitbook": ">=2.6.0"
+  }
+}

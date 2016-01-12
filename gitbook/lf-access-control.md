@@ -15,15 +15,15 @@ Target does **not** respect imports, so the fully qualified path has to be used.
 
 If it is a class or abstract type, access modification extends to all fields of that type. Likewise, if it is a package, access modification extends to all types of that package and recursively to all fields of these types.
 
-[include](assets/ACL.hx)
+{% codeasset haxe %}assets/ACL.hx{% endcodeasset %}
 
 Here, `MyClass.foo` can be accessed from the `main`-method because `MyClass` is annotated with `@:allow(Main)`. This would also work with `@:allow(Main.main)` and both versions could alternatively be annotated to the field `foo` instead of the class `MyClass`:
 
-[include](assets/ACL2.hx)
+{% codeasset haxe %}assets/ACL2.hx{% endcodeasset %}
 
 If a type cannot be modified to allow this kind of access, the accessing method may force access:
 
-[include](assets/ACL3.hx)
+{% codeasset haxe %}assets/ACL3.hx{% endcodeasset %}
 
 The `@:access(MyClass.foo)` annotation effectively subverts the visibility of the `foo` field within the `main`-method. 
 
@@ -43,7 +43,7 @@ The `@:access(MyClass.foo)` annotation effectively subverts the visibility of th
 
 If access is allowed to an [interface](types-interfaces.md), it extends to all classes implementing that interface:
 
-[include](assets/ACL4.hx)
+{% codeasset haxe %}assets/ACL4.hx{% endcodeasset %}
 
 This is also true for access granted to parent classes, in which case it extends to all child classes.
 

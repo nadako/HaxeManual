@@ -29,7 +29,7 @@ The compiler checks if the `implements` assumption holds. That is, it makes sure
 
 Interface fields are not limited to methods. They can be variables and properties as well:
 
-[include](assets/InterfaceWithVariables.hx)
+{% codeasset haxe %}assets/InterfaceWithVariables.hx{% endcodeasset %}
 
 Interfaces can extend multiple other interfaces using the `extends` keyword:
 ```haxe

@@ -2,7 +2,7 @@
 
 Methods can be denoted with the `dynamic` keyword to make them (re-)bindable:
 
-[include](assets/DynamicFunction.hx)
+{% codeasset haxe %}assets/DynamicFunction.hx{% endcodeasset %}
 
 The first call to `test()` invokes the original function which returns the `String` `"original"`. In the next line, `test` is **assigned** a new function. This is precisely what `dynamic` allows: Function fields can be assigned a new function. As a result, the next invocation of `test()` returns the `String` `"new"`.
 

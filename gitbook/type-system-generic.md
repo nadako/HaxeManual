@@ -4,7 +4,7 @@ Usually, the Haxe Compiler generates only a single class or function even if it 
 
 A class or function can be made **generic** by attributing it with the `:generic` [metadata](lf-metadata.md). This causes the compiler to emit a distinct class/function per type parameter combination with mangled names. A specification like this can yield a boost in performance-critical code portions on [static targets](dictionary.md#define-static-target) at the cost of a larger output size:
 
-[include](assets/GenericClass.hx)
+{% codeasset haxe %}assets/GenericClass.hx{% endcodeasset %}
 
 It seems unusual to see the explicit type `MyValue<String>` here as we usually let [type inference](type-system-type-inference.md) deal with this. Nonetheless, it is indeed required in this case. The compiler has to know the exact type of a generic class upon construction. The JavaScript output shows the result:
 
@@ -27,7 +27,7 @@ Test.main();
 
 We can identify that `MyValue<String>` and `MyValue<Int>` have become `MyValue_String` and `MyValue_Int` respectively. This is similar for generic functions:
 
-[include](assets/GenericFunction.hx)
+{% codeasset haxe %}assets/GenericFunction.hx{% endcodeasset %}
 
 Again, the JavaScript output makes it obvious:
 

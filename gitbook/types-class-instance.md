@@ -4,7 +4,7 @@ Similar to many object-oriented languages, classes are the primary data structur
 
 The following code example serves as basis for the remainder of this section:
 
-[include](assets/Point.hx)
+{% codeasset haxe %}assets/Point.hx{% endcodeasset %}
 
 Semantically, this class represents a point in discrete 2-dimensional space - but this is not important here. Let us instead describe the structure:
 

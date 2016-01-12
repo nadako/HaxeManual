@@ -2,9 +2,8 @@
 
 If a class has the `:autoBuild` metadata, the compiler generates `:build` metadata on all extending classes. If an interface has the `:autoBuild` metadata, the compiler generates `:build` metadata on all implementing classes and all extending interfaces. Note that `:autoBuild` does not imply `:build` on the class/interface itself.
 
-[include](assets/AutoBuildingMacro.hx)
-
-[include](assets/AutoBuilding.hx)
+{% codeasset haxe %}assets/AutoBuildingMacro.hx{% endcodeasset %}
+{% codeasset haxe %}assets/AutoBuilding.hx{% endcodeasset %}
 
 This outputs during compilation:
 

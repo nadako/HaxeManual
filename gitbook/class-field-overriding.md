@@ -2,7 +2,7 @@
 
 Overriding fields is instrumental for creating class hierarchies. Many design patterns utilize it, but here we will explore only the basic functionality. In order to use overrides in a class, it is required that this class has a [parent class](types-class-inheritance.md). Let us consider the following example:
 
-[include](assets/Override.hx)
+{% codeasset haxe %}assets/Override.hx{% endcodeasset %}
 
 The important components here are:
 
@@ -14,6 +14,6 @@ The variable `child` is explicitly typed as `Base` to highlight an important dif
 
 The `Child` class can access methods it has overriden by calling `super.methodName()`:
 
-[include](assets/OverrideCallParent.hx)
+{% codeasset haxe %}assets/OverrideCallParent.hx{% endcodeasset %}
 
 The section on [Inheritance](types-class-inheritance.md) explains the use of `super()` from within a `new` constructor.

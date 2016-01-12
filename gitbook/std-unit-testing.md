@@ -6,12 +6,12 @@ The Haxe Standard Library provides basic unit testing classes from the [haxe.uni
 
 First, create a new class extending [haxe.unit.TestCase](http://api.haxe.org/haxe/unit/TestCase.html) and add own test methods. Every test method name must start with "`test`".
 
-[include](assets/UnitTestCase.hx)
+{% codeasset haxe %}assets/UnitTestCase.hx{% endcodeasset %}
 
 ##### Running unit tests
 To run the test, an instance of [haxe.unit.TestRunner](http://api.haxe.org/haxe/unit/TestRunner.html) has to be created. Add the [TestCase](http://api.haxe.org/haxe/unit/TestCase.html) using the `add` method and call `run` to start the test.
 
-[include](assets/UnitTestRunner.hx)
+{% codeasset haxe %}assets/UnitTestRunner.hx{% endcodeasset %}
 
 The result of the test looks like this:
 ```haxe 
@@ -34,7 +34,7 @@ To run code before or after the test, override the functions `setup` and `tearDo
 * `setup` is called before each test runs.
 * `tearDown` is called once after all tests are run.
 
-[include](assets/UnitTestSetup.hx)
+{% codeasset haxe %}assets/UnitTestSetup.hx{% endcodeasset %}
 
 ##### Comparing Complex Objects
 

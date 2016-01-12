@@ -2,7 +2,7 @@
 
 The `inline` keyword allows function bodies to be directly inserted in place of calls to them. This can be a powerful optimization tool, but should be used judiciously as not all functions are good candidates for inline behavior. The following example demonstrates the basic usage:
 
-[include](assets/Inline.hx)
+{% codeasset haxe %}assets/Inline.hx{% endcodeasset %}
 
 The generated JavaScript output reveals the effect of inline:
 
@@ -26,6 +26,6 @@ Inline is not guaranteed to be done. The compiler might cancel inlining for vari
 
 It is important to remember this when relying on inline:
 
-[include](assets/InlineRelying.hx)
+{% codeasset haxe %}assets/InlineRelying.hx{% endcodeasset %}
 
 If the call to `error` is inlined the program compiles correctly because the control flow checker is satisfied due to the inlined [throw](expression-throw.md) expression. If inline is not done, the compiler only sees a function call to `error` and emits the error `A return is missing here`.

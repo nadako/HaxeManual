@@ -6,4 +6,4 @@ The Haxe compiler generates runtime type information (RTTI) for classes that are
 
 The type `haxe.rtti.Rtti` has been introduced in order to simplify working with RTTI. Retrieving this information is now very easy:
 
-[include](assets/RttiUsage.hx)
+{% codeasset haxe %}assets/RttiUsage.hx{% endcodeasset %}

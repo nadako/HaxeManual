@@ -8,11 +8,11 @@ of "require" statements for `extern` classes.
 
 This feature can be enabled by specifying `@:jsRequire` metadata for the extern class. If our `extern` class represents a whole module, we pass a single argument to the `@:jsRequire` metadata specifying the name of the module to load:
 
-[include](assets/JSRequireModule.hx)
+{% codeasset haxe %}assets/JSRequireModule.hx{% endcodeasset %}
 
 In case our `extern` class represents an object within a module, second `@:jsRequire` argument specifies an object to load from a module:
 
-[include](assets/JSRequireObject.hx)
+{% codeasset haxe %}assets/JSRequireObject.hx{% endcodeasset %}
 
 The second argument is a dotted-path, so we can load sub-objects in any hierarchy.
 

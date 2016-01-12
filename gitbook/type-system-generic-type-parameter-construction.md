@@ -6,7 +6,7 @@
 
 It is not possible to construct normal type parameters, e.g. `new T()` is a compiler error. The reason for this is that Haxe generates only a single function and the construct makes no sense in that case. This is different when the type parameter is generic: Since we know that the compiler will generate a distinct function for each type parameter combination, it is possible to replace the `T` `new T()` with the real type.
 
-[include](assets/GenericTypeParameter.hx)
+{% codeasset haxe %}assets/GenericTypeParameter.hx{% endcodeasset %}
 
 It should be noted that [top-down inference](type-system-top-down-inference.md) is used here to determine the actual type of `T`. There are two requirements for this kind of type parameter construction to work: The constructed type parameter must be
 

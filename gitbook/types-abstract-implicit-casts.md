@@ -7,14 +7,12 @@ Unlike classes, abstracts allow defining implicit casts. There are two kinds of 
 
 The following code example shows an example of **direct** casting:
 
-[include](assets/ImplicitCastDirect.hx)
-
+{% codeasset haxe %}assets/ImplicitCastDirect.hx{% endcodeasset %}
 We declare `MyAbstract` as being `from Int` and `to Int`, meaning it can be assigned from `Int` and assigned to `Int`. This is shown in lines 9 and 10, where we first assign the `Int` `12` to variable `a` of type `MyAbstract` (this works due to the `from Int` declaration) and then that abstract back to variable `b` of type `Int` (this works due to the `to Int` declaration).
 
 Class field casts have the same semantics, but are defined completely differently:
 
-[include](assets/ImplicitCastField.hx)
-
+{% codeasset haxe %}assets/ImplicitCastField.hx{% endcodeasset %}
 By adding `@:from` to a static function, that function qualifies as implicit cast function from its argument type to the abstract. These functions must return a value of the abstract type. They must also be declared `static`.
 
 Similarly, adding `@:to` to a function qualifies it as implicit cast function from the abstract to its return type. These functions are typically member-functions but they can be made `static` and then serve as [selective function](types-abstract-selective-functions.md).
@@ -48,6 +46,5 @@ _Figure: Selection algorithm flow chart._
 
 By design, implicit casts are **not transitive**, as the following example shows:
 
-[include](assets/ImplicitTransitiveCast.hx)
-
+{% codeasset haxe %}assets/ImplicitTransitiveCast.hx{% endcodeasset %}
 While the individual casts from `A` to `B` and from `B` to `C` are allowed, a transitive cast from `A` to `C` is not. This is to avoid ambiguous cast-paths and retain a simple selection algorithm.

@@ -9,7 +9,7 @@ If a constructor is declared to be [inline](class-field-inline.md), the compiler
 
 The following example demonstrates constructor inlining:
 
-[include](assets/NewInline.hx)
+{% codeasset haxe %}assets/NewInline.hx{% endcodeasset %}
 
 A look at the JavaScript output reveals the effect:
 

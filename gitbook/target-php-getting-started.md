@@ -2,7 +2,7 @@
 
 To get started with Haxe/PHP, create a new folder and save this class as `Main.hx`.
 
-[include](assets/HelloPHP.hx)
+{% codeasset haxe %}assets/HelloPHP.hx{% endcodeasset %}
 
 To compile, either run the following from the command line:
 

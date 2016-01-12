@@ -24,7 +24,7 @@ Use of `Dynamic` should be minimized as there are better options in many situati
 
 `Dynamic` behaves in a special way when being [unified](type-system-unification.md) with a [monomorph](types-monomorph.md). Monomorphs are never bound to `Dynamic` which can have surprising results in examples such as this:
 
-[include](assets/DynamicInferenceIssue.hx)
+{% codeasset haxe %}assets/DynamicInferenceIssue.hx{% endcodeasset %}
 
 Although the return type of `Json.parse` is `Dynamic`, the type of local variable `json` is not bound to it and remains a monomorph. It is then inferred as an [anonymous structure](types-anonymous-structure.md) upon the `json.length` field access, which causes the following `json[0]` array access to fail. In order to avoid this, the variable `json` can be explicitly typed as `Dynamic` by using `var json:Dynamic`.
 

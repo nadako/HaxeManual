@@ -2,6 +2,6 @@
 
 Copy and paste the following code into any editor or IDE of your choice:
 
-[include](../HaxeManual/assets/HelloWorld.hx)
+{% codeasset haxe %}../HaxeManual/assets/HelloWorld.hx{% endcodeasset %}
 
 Save it as "HelloWorld.hx" anywhere you like.

@@ -2,4 +2,4 @@
 
 If the final argument of a macro is of type `Array<Expr>`, the macro accepts an arbitrary number of extra arguments which are available from that array:
 
-[include](assets/MacroArgumentsRest.hx)
+{% codeasset haxe %}assets/MacroArgumentsRest.hx{% endcodeasset %}

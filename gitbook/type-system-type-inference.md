@@ -2,8 +2,7 @@
 
 The effects of type inference have been seen throughout this document and will continue to be important. A simple example shows type inference at work:
 
-[include](assets/TypeInference.hx)
-
+{% codeasset haxe %}assets/TypeInference.hx{% endcodeasset %}
 The special construct `$type` was previously mentioned in order to simplify the explanation of the [Function Type](types-function.md) type, so let us now introduce it officially:
 
 > ##### Define: `$type`
@@ -16,6 +15,5 @@ Whenever a type other than [Dynamic](types-dynamic.md) is unified with a monomor
 
 Following the rules of unification, type inference can occur in compound types:
 
-[include](assets/TypeInference2.hx)
-
+{% codeasset haxe %}assets/TypeInference2.hx{% endcodeasset %}
 Variable `x` is first initialized to an empty `Array`. At this point we can tell that the type of `x` is an array, but we do not yet know the type of the array elements. Consequentially, the type of `x` is `Array<Unknown<0>>`. It is only after pushing a `String` onto the array that we know the type to be `Array<String>`.

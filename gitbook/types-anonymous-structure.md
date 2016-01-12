@@ -2,8 +2,7 @@
 
 Anonymous structures can be used to group data without explicitly creating a type. The following example creates a structure with two fields `x` and `name`, and initializes their values to `12` and `"foo"` respectively:
 
-[include](assets/Structure.hx)
-
+{% codeasset haxe %}assets/Structure.hx{% endcodeasset %}
 The general syntactic rules follow:
 
 1. A structure is enclosed in curly braces `{}` and

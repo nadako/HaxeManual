@@ -2,7 +2,7 @@
 
 Unlike [unsafe casts](expression-cast-unsafe.md), the runtime behavior in case of a failing cast is defined for safe casts:
 
-[include](assets/SafeCast.hx)
+{% codeasset haxe %}assets/SafeCast.hx{% endcodeasset %}
 
 In this example we first cast a class instance of type `Child1` to `Base`, which succeeds because `Child1` is a [child class](types-class-inheritance.md) of `Base`. We then try to cast the same class instance to `Child2`, which is not allowed because instances of `Child2` are not instances of `Child1`.
 

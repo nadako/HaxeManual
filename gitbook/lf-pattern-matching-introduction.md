@@ -2,7 +2,7 @@
 
 Pattern matching is the process of branching depending on a value matching given, possibly deep patterns. In Haxe, all pattern matching is done within a [`switch` expression](expression-switch.md) where the individual `case` expressions represent the patterns. Here we will explore the syntax for different patterns using this data structure as running example:
 
-[include](assets/PatternMatching.hx)
+{% codeasset haxe %}assets/PatternMatching.hx{% endcodeasset %}
 
 Some pattern matcher basics include:
 

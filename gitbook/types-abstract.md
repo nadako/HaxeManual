@@ -2,8 +2,7 @@
 
 An abstract type is a type which is actually a different type at run-time. It is a compile-time feature which defines types "over" concrete types in order to modify or augment their behavior:
 
-[include](assets/MyAbstract.hx)
-
+{% codeasset haxe %}assets/MyAbstract.hx{% endcodeasset %}
 We can derive the following from this example:
 
 * The keyword `abstract` denotes that we are declaring an abstract type.
@@ -20,8 +19,7 @@ The syntax is reminiscent of classes and the semantics are indeed similar. In fa
 
 Furthermore, abstracts can be instantiated and used just like classes:
 
-[include](assets/MyAbstract.hx)
-
+{% codeasset haxe %}assets/MyAbstract.hx{% endcodeasset %}
 As mentioned before, abstracts are a compile-time feature, so it is interesting to see what the above actually generates. A suitable target for this is JavaScript, which tends to generate concise and clean code. Compiling the above (using `haxe -main MyAbstract -js myabstract.js`) shows this JavaScript code:
 
 ```haxe

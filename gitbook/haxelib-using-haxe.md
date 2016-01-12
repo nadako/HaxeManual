@@ -4,7 +4,7 @@ Any installed Haxe library can be made available to the compiler through the `-l
 
 For our exemplary usage we chose a very simple Haxe library called "random". It provides a set of static convenience methods to achieve various random effects, such as picking a random element from an array.
 
-[include](assets/HaxelibRandom.hx)
+{% codeasset haxe %}assets/HaxelibRandom.hx{% endcodeasset %}
 
 Compiling this without any `-lib` argument causes an error message along the lines of `Unknown identifier : Random`. This shows that installed Haxe libraries are not available to the compiler by default unless they are explicitly added. A working command line for above program is `haxe -lib random -main Main --interp`.
 

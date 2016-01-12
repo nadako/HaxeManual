@@ -2,8 +2,7 @@
 
 Haxe 3 allows binding functions with partially applied arguments. Each function type can be considered to have a `bind` field, which can be called with the desired number of arguments in order to create a new function. This is demonstrated here:
 
-[include](assets/Bind.hx)
-
+{% codeasset haxe %}assets/Bind.hx{% endcodeasset %}
 Line 4 binds the function `map.set` to a variable named `f`, and applies `12` as second argument. The underscore `_` is used to denote that this argument is not bound, which is shown by comparing the types of `map.set` and `f`: The bound `String` argument is effectively cut from the type, turning a `Int->String->Void` type into `Int->Void`.
 
 A call to `f(1)` then actually invokes `map.set(1, "12")`, the calls to `f(2)` and `f(3)` are analogous. The last line proves that all three indices indeed are mapped to the value `"12"`.

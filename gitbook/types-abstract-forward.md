@@ -4,7 +4,7 @@
 
 When wrapping an underlying type, it is sometimes desirable to "keep" parts of its functionality. Because writing forwarding functions by hand is cumbersome, Haxe allows adding the `:forward` metadata to an abstract type:
 
-[include](assets/AbstractExpose.hx)
+{% codeasset haxe %}assets/AbstractExpose.hx{% endcodeasset %}
 
 The `MyArray` abstract in this example wraps `Array`. Its `:forward` metadata has two arguments which correspond to the field names to be forwarded to the underlying type. In this example, the `main` method instantiates `MyArray` and accesses its `push` and `pop` methods. The commented line demonstrates that the `length` field is not available.
 

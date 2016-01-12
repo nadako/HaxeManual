@@ -6,7 +6,7 @@
 
 Static extensions can be a powerful tool which allows augmenting types without actually changing them. The following example demonstrates the usage:
 
-[include](assets/StaticExtension.hx)
+{% codeasset haxe %}assets/StaticExtension.hx{% endcodeasset %}
 
 Clearly, `Int` does not natively provide a `triple` method, yet this program compiles and outputs `36` as expected. This is because the call to `12.triple()` is transformed into `IntExtender.triple(12)`. There are three requirements for this:
 

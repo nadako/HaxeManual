@@ -2,8 +2,7 @@
 
 We have already seen variable fields in several code examples of previous sections. Variable fields hold values, a characteristic which they share with most (but not all) properties:
 
-[include](assets/VariableField.hx)
-
+{% codeasset haxe %}assets/VariableField.hx{% endcodeasset %}
 We can learn from this that a variable
 
 1. has a name (here: `member`),

@@ -8,7 +8,7 @@ An `Array` is a collection of elements. It has one [type parameter](type-system-
 
 Arrays come with an [API](http://api.haxe.org/Array.html) to cover most use-cases. Additionally they allow read and write [array access](expression-array-access.md):
 
-[include](assets/ArrayAccess.hx)
+{% codeasset haxe %}assets/ArrayAccess.hx{% endcodeasset %}
 
 Since array access in Haxe is unbounded, i.e. it is guaranteed to not throw an exception, this requires further discussion:
 
@@ -18,7 +18,7 @@ Since array access in Haxe is unbounded, i.e. it is guaranteed to not throw an e
 
 Arrays define an [iterator](lf-iterators.md) over their elements. This iteration is typically optimized by the compiler to use a [`while` loop](expression-while.md) with array index:
 
-[include](assets/ArrayIterator.hx)
+{% codeasset haxe %}assets/ArrayIterator.hx{% endcodeasset %}
 
 Haxe generates this optimized JavaScript output:
 
@@ -38,7 +38,7 @@ Main.main = function() {
 
 Haxe does not allow arrays of mixed types unless the parameter type is forced to [`Dynamic`](types-dynamic.md):
 
-[include](assets/ArrayDynamic.hx)
+{% codeasset haxe %}assets/ArrayDynamic.hx{% endcodeasset %}
 
 > ##### Trivia: Dynamic Arrays
 >

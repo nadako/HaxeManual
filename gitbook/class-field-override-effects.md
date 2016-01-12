@@ -2,7 +2,7 @@
 
 Overriding adheres to the rules of [variance](type-system-variance.md). That is, their argument types allow **contravariance** (less specific types) while their return type allows **covariance** (more specific types):
 
-[include](assets/OverrideVariance.hx)
+{% codeasset haxe %}assets/OverrideVariance.hx{% endcodeasset %}
 
 Intuitively, this follows from the fact that arguments are "written to" the function and the return value is "read from" it.
 

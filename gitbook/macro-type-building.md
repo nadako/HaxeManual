@@ -9,9 +9,8 @@ Type-building macros are different from expression macros in several ways:
 
 The following example demonstrates type building. Note that it is split up into two files for a reason: If a module contains a `macro` function, it has to be typed into macro context as well. This is often a problem for type-building macros because the type to be built could only be loaded in its incomplete state, before the building macro has run. We recommend to always define type-building macros in their own module.
 
-[include](assets/TypeBuildingMacro.hx)
-
-[include](assets/TypeBuilding.hx)
+{% codeasset haxe %}assets/TypeBuildingMacro.hx{% endcodeasset %}
+{% codeasset haxe %}assets/TypeBuilding.hx{% endcodeasset %}
 
 The `build` method of `TypeBuildingMacro` performs three steps:
 

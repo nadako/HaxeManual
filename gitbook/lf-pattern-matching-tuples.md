@@ -2,7 +2,7 @@
 
 Array syntax can be used to match on multiple values:
 
-[include](assets/PatternMatching.hx)
+{% codeasset haxe %}assets/PatternMatching.hx{% endcodeasset %}
 
 This is quite similar to usual array matching, but there are differences:
 

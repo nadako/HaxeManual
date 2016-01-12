@@ -11,4 +11,4 @@ enum Option<T> {
 
 It can be used in various situations, such as communicating whether or not a method had a valid return and if so, what value it returned:
 
-[include](assets/OptionUsage.hx)
+{% codeasset haxe %}assets/OptionUsage.hx{% endcodeasset %}

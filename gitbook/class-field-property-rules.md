@@ -4,7 +4,7 @@ Visibility of accessor methods has no effect on the accessibility of its propert
 
 Both getter and setter may access their physical field for data storage. The compiler ensures that this kind of field access does not go through the accessor method if made from within the accessor method itself, thus avoiding infinite recursion:
 
-[include](assets/GetterSetter.hx)
+{% codeasset haxe %}assets/GetterSetter.hx{% endcodeasset %}
 
 However, the compiler assumes that a physical field exists only if at least one of the access identifiers is `default` or `null`.
 
@@ -20,11 +20,11 @@ However, the compiler assumes that a physical field exists only if at least one 
 
 If this is not the case, access to the field from within an accessor method causes a compilation error:
 
-[include](assets/GetterSetter2.hx)
+{% codeasset haxe %}assets/GetterSetter2.hx{% endcodeasset %}
 
 If a physical field is indeed intended, it can be forced by attributing the field in question with the `:isVar` [metadata](lf-metadata.md):
 
-[include](assets/GetterSetter3.hx)
+{% codeasset haxe %}assets/GetterSetter3.hx{% endcodeasset %}
 
 > ##### Trivia: Property setter type
 >

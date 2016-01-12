@@ -8,7 +8,7 @@ Haxe allows conditional compilation by using `#if`, `#elseif` and `#else` and ch
 
 This example demonstrates usage of conditional compilation:
 
-[include](assets/ConditionalCompilation.hx)
+{% codeasset haxe %}assets/ConditionalCompilation.hx{% endcodeasset %}
 
 Compiling this without any flags will leave only the `trace("ok");` line in the body of the `main` method. The other branches are discarded while parsing the file. These other branches must still contain valid Haxe syntax, but the code is not type-checked.
 

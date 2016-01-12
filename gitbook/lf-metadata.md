@@ -9,7 +9,7 @@ Several constructs can be attributed with custom metadata:
 
 These metadata information can be obtained at runtime through the `haxe.rtti.Meta` API:
 
-[include](assets/Meta.hx)
+{% codeasset haxe %}assets/Meta.hx{% endcodeasset %}
 
 We can easily identify metadata by the leading `@` character, followed by the metadata name and, optionally, by a number of comma-separated constant arguments enclosed in parentheses.
 

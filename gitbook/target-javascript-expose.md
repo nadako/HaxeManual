@@ -5,7 +5,7 @@ To expose, add the `@:expose` metadata to the desired class or static fields.
 
 This example exposes the Haxe class `MyClass`.
 
-[include](assets/ClassExpose.hx)
+{% codeasset haxe %}assets/ClassExpose.hx{% endcodeasset %}
 
 It generates the following JavaScript output:
 

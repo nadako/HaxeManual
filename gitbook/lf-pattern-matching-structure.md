@@ -2,7 +2,7 @@
 
 It is also possible to match against the fields of anonymous structures and instances:
 
-[include](assets/PatternMatching.hx)
+{% codeasset haxe %}assets/PatternMatching.hx{% endcodeasset %}
 
 In the second case we bind the matched `name` field to identifier `n` if `rating` matches `"awesome"`. Of course this structure could also be put into the `Tree` from the previous example to combine structure and enum matching.
 

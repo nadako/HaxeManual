@@ -18,7 +18,7 @@ extern class Math
 
 We see that externs can define both methods and variables (actually, `PI` is declared as a read-only [property](class-field-property.md)). Once this information is available to the compiler, it allows field access accordingly and also knows the types:
 
-[include](assets/Extern.hx)
+{% codeasset haxe %}assets/Extern.hx{% endcodeasset %}
 
 This works because the return type of method `floor` is declared to be `Int`.
 
@@ -38,4 +38,4 @@ The haxe.extern package provides two types that help mapping native semantics to
 
 We demonstrate the usage in this code sample:
 
-[include](assets/RestAndEitherType.hx)
+{% codeasset haxe %}assets/RestAndEitherType.hx{% endcodeasset %}

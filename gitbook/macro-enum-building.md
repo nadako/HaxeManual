@@ -5,9 +5,8 @@ Building [enums](types-enum-instance.md) is analogous to building classes with a
 * Enum constructors without arguments are variable fields `FVar`.
 * Enum constructors with arguments are method fields `FFun`.
 
-[include](assets/EnumBuildingMacro.hx)
-
-[include](assets/EnumBuilding.hx)
+{% codeasset haxe %}assets/EnumBuildingMacro.hx{% endcodeasset %}
+{% codeasset haxe %}assets/EnumBuilding.hx{% endcodeasset %}
 
 Because enum `E` is annotated with a `:build` metadata, the called macro builds two constructors `A` and `B` "into" it. The former is added with the kind being `FVar(null, null)`, meaning it is a constructor without argument. For the latter, we use [reification](macro-reification-expression.md) to obtain an instance of `haxe.macro.Expr.Function` with a singular `Int` argument.
 

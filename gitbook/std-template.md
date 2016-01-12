@@ -4,7 +4,7 @@ Haxe comes with a standard template system with an easy to use syntax which is i
 
 A template is a string or a file that is used to produce any kind of string output depending on the input. Here is a small template example:
 
-[include](assets/Template.hx)
+{% codeasset haxe %}assets/Template.hx{% endcodeasset %}
 
 The console will trace `My name is Mark, 30 years old`.
 
@@ -72,8 +72,7 @@ The console will trace `The users are Mark(30) John(45)`.
 To call custom functions while parts of the template are being rendered, provide a `macros` object to the argument of [Template.execute](http://api.haxe.org/haxe/Template.html#execute). The key will act as the template variable name, the value refers to a callback function that should return a `String`. The first argument of this macro function is always a `resolve()` method, followed by the given arguments. The resolve function can be called to retrieve values from the template context. If `macros` has no such field, the result is unspecified.
 
 The following example passes itself as macro function context and executes `display` from the template.
-[include](assets/TemplateMacros.hx)
-
+{% codeasset haxe %}assets/TemplateMacros.hx{% endcodeasset %}
 The console will trace `The results: Mark ran 3.5 kilometers in 15 minutes`.
 
 ##### Globals
@@ -83,7 +82,7 @@ Use the [Template.globals](http://api.haxe.org/haxe/Template.html#globals) objec
 
 To separate the content from the code, consider using the [resource embedding system](cr-resources.md). 
 Place the template-content in a new file called `sample.mtt`, add `-resource sample.mtt@my_sample` to the compiler arguments and retrieve the content using `haxe.Resource.getString`.
-[include](assets/TemplateResource.hx)
+{% codeasset haxe %}assets/TemplateResource.hx{% endcodeasset %}
 
 When running the template system on the server side, you can simply use `neko.Lib.print` or `php.Lib.print` instead of trace to display the HTML template to the user.
 

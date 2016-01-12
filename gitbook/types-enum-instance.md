@@ -2,8 +2,7 @@
 
 Haxe provides powerful enumeration (short: enum) types, which are actually an **algebraic data type** (ADT). While they cannot have any [expressions](expression.md), they are very useful for describing data structures:
 
-[include](assets/Color.hx)
-
+{% codeasset haxe %}assets/Color.hx{% endcodeasset %}
 Semantically, this enum describes a color which is either red, green, blue or a specified RGB value. The syntactic structure is as follows:
 
 * The keyword `enum` denotes that we are declaring an enum.

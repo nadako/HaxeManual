@@ -2,8 +2,7 @@
 
 The following program prints "Hello World" after being compiled and run:
 
-[include](assets/HelloWorld.hx)
-
+{% codeasset haxe %}assets/HelloWorld.hx{% endcodeasset %}
 This can be tested by saving the above code to a file named `Main.hx` and invoking the Haxe Compiler like so: `haxe -main Main --interp`. It then generates the following output: `Main.hx:3: Hello world`. There are several things to learn from this:
 
 * Haxe programs are saved in files with an extension of `.hx`.

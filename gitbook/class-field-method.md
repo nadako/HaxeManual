@@ -2,7 +2,7 @@
 
 While [variables](class-field-variable.md) hold data, methods are defining behavior of a program by hosting [expressions](expression.md). We have seen method fields in every code example of this document with even the initial [Hello World](introduction-hello-world.md) example containing a `main` method:
 
-[include](assets/HelloWorld.hx)
+{% codeasset haxe %}assets/HelloWorld.hx{% endcodeasset %}
 
 Methods are identified by the `function` keyword. We can also learn that they
 
@@ -14,7 +14,7 @@ Methods are identified by the `function` keyword. We can also learn that they
 
 We can also look at the next example to learn more about arguments and return types:
 
-[include](assets/MethodField.hx)
+{% codeasset haxe %}assets/MethodField.hx{% endcodeasset %}
 
 Arguments are given by an opening parenthesis `(` after the field name, a comma `,` separated list of argument specifications and a closing parenthesis `)`. Additional information on the argument specification is described in [Function Type](types-function.md).
 

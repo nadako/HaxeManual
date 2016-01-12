@@ -2,4 +2,4 @@
 
 A regular expression can also be used to split a string into several substrings:
 
-[include](assets/ERegSplit.hx)
+{% codeasset haxe %}assets/ERegSplit.hx{% endcodeasset %}

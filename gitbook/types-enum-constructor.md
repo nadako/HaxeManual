@@ -17,7 +17,7 @@ All enum instances can be assigned to a special type named `EnumValue`.
 
 It is important to distinguish enum types and enum constructors, as this example demonstrates:
 
-[include](assets/EnumUnification.hx)
+{% codeasset haxe %}assets/EnumUnification.hx{% endcodeasset %}
 
 If the commented line is uncommented, the program does not compile because `Red` (an enum constructor) cannot be assigned to a variable of type `Enum<Color>` (an enum type). The relation is analogous to a class and its instance.
 

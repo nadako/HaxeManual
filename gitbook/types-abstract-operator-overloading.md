@@ -2,8 +2,7 @@
 
 Abstracts allow overloading of unary and binary operators by adding the `@:op` metadata to class fields:
 
-[include](assets/AbstractOperatorOverload.hx)
-
+{% codeasset haxe %}assets/AbstractOperatorOverload.hx{% endcodeasset %}
 By defining `@:op(A * B)`, the function `repeat` serves as operator method for the multiplication `*` operator when the type of the left value is `MyAbstract` and the type of the right value is `Int`. The usage is shown in line 17, which turns into this when compiled to JavaScript:
 
 ```haxe
@@ -16,12 +15,11 @@ The example `repeat` function is not commutative: While `MyAbstract * Int` works
 
 Overloading unary operators is analogous:
 
-[include](assets/AbstractUnopOverload.hx)
-
+{% codeasset haxe %}assets/AbstractUnopOverload.hx{% endcodeasset %}
 Both binary and unary operator overloads can return any type.
 
 ##### Exposing underlying type operations
 
 It is also possible to omit the method body of a `@:op` function, but only if the underlying type of the abstract allows the operation in question and if the resulting type can be assigned back to the abstract.
 
-[include](assets/AbstractExposeTypeOperations.hx)
+{% codeasset haxe %}assets/AbstractExposeTypeOperations.hx{% endcodeasset %}

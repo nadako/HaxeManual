@@ -7,7 +7,7 @@ Many runtime values can be serialized and deserialized using the [haxe.Serialize
 
 The following example demonstrates the first usage:
 
-[include](assets/SerializationExample.hx)
+{% codeasset haxe %}assets/SerializationExample.hx{% endcodeasset %}
 
 The result of the serialization (here stored in local variable `s`) is a [String](std-String.md) and can be passed around at will, even remotely. Its format is described in [Serialization format](std-serialization-format.md).
 
@@ -44,7 +44,7 @@ If the serialization result is stored and later used for deserialization, care h
 
 If a class defines the member method `hxSerialize`, that method is called by the serializer and allows custom serialization of the class. Likewise, if a class defines the member method `hxUnserialize` it is called by the deserializer:
 
-[include](assets/SerializationCustom.hx)
+{% codeasset haxe %}assets/SerializationCustom.hx{% endcodeasset %}
 
 In this example we decide that we want to ignore the value of member variable `y` and do not serialize it. Instead we default it to `-1` in `hxUnserialize`. Both methods are annotated with the `@:keep` metadata to prevent [dead code elimination](cr-dce.md) from removing them as they are never properly referenced in the code.
 
