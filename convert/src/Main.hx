@@ -17,7 +17,6 @@ class Main {
 			sourceDirectory: ".",
 			sourceFile: null,
 			output: new haxe.io.Path("output/"),
-			outputMode: Markdown,
 			omitIds: false,
 		}
 
@@ -29,10 +28,6 @@ class Main {
 			@doc("Sets the output")
 			"-o" => function(output:String) {
 				config.output = new haxe.io.Path(output);
-				switch (output.split(".").pop()) {
-					case "epub": config.outputMode = EPub;
-					case "mobi": config.outputMode = Mobi;
-				}
 			},
 			@doc("Omit chapter and section IDs")
 			"--omit-ids" => function() {
@@ -77,13 +72,7 @@ class Main {
 		}
 
 		function generateTitleString(sec:Section, prefix = "##") {
-			var s = '$prefix ${sec.id.length > 0 ? sec.id + " " : ""}${sec.title}\n\n';
-			return switch (config.outputMode) {
-				case EPub | Mobi:
-					'<a id="${url(sec)}"></a>\n' + s;
-				case Markdown:
-					s;
-			}
+			return '$prefix ${sec.id.length > 0 ? sec.id + " " : ""}${sec.title}\n\n';
 		}
 
 		for (sec in sectionInfo.all) {
@@ -96,48 +85,29 @@ class Main {
 			}
 		}
 
-		unlink(out);
-		sys.FileSystem.createDirectory(out);
-
-		var sectionContent = [];
-
 		for (i in 0...sectionInfo.all.length) {
 			var sec = sectionInfo.all[i];
 			sec.content = generateTitleString(sec) + sec.content + "\n";
-			if (config.outputMode == Markdown) {
-			sec.content += "\n---";
-			if (i != 0) sec.content += '\n\nPrevious section: ${link(sectionInfo.all[i - 1])}';
-			if (i != sectionInfo.all.length - 1) sec.content += '\n\nNext section: ${link(sectionInfo.all[i + 1])}';
 			sys.io.File.saveContent('$out/${url(sec)}', sec.content);
-			} else {
-				sectionContent.push(sec.content);
-			}
 		}
 		generateDictionary();
 		generateTodo();
 
-		function prepare(sec:Section) {
-			Reflect.deleteField(sec, "content");
-			Reflect.deleteField(sec, "parent");
-			sec.sub.iter(prepare);
+		var summary = [];
+		function loop(sections:Array<Section>, indent:String) {
+			for (section in sections) {
+				var link = '[${section.title}](${url(section)})';
+				summary.push(indent + "* " + link);
+				loop(section.sub, indent + " ");
+			}
 		}
-		sections.iter(prepare);
-		sys.io.File.saveContent('$out/sections.txt', haxe.Json.stringify(sections));
+		loop(sections, "");
+		summary.push('* [Dictionary](dictionary.md)');
+		sys.io.File.saveContent('$out/SUMMARY.md', summary.join("\n"));
 
-		switch (config.outputMode) {
-			case EPub | Mobi:
-				var filePath = '$out/content.md';
-				sys.io.File.saveContent(filePath, sectionContent.join("\n"));
-				generateEPub(filePath);
-			case Markdown:
-		}
-
-		switch (config.outputMode) {
-			case Mobi:
-				if (Sys.command("ebook-convert", ['$out/${config.output.file}.epub', '$out/${config.output.file}.mobi', "--no-inline-toc"]) != 0)
-					throw "ebook-convert failed";
-			case _:
-		}
+		unlink('$out/assets');
+		if (sys.FileSystem.exists("assets"))
+			copyRec("assets", '$out/assets');
 	}
 
 	function parse(source:String) {
@@ -196,15 +166,8 @@ class Main {
 	function generateDictionary() {
 		var entries = parser.definitions;
 		entries.sort(function(v1, v2) return Reflect.compare(v1.title.toLowerCase(), v2.title.toLowerCase()));
-		var definitions = [];
-		for (entry in entries) {
-			var anchorName = switch (config.outputMode) {
-				case Markdown: entry.label;
-				case EPub | Mobi: "dictionary.md-" +entry.label;
-			}
-			definitions.push('<a id="$anchorName" class="anch"></a>\n\n##### ${entry.title}\n${process(entry.content)}');
-		}
-		sys.io.File.saveContent('$out/dictionary.md', definitions.join("\n\n"));
+		var definitions = [for (entry in entries) '<a id="${entry.label}" class="anch"></a>\n\n## ${entry.title}\n${process(entry.content)}'];
+		sys.io.File.saveContent('$out/dictionary.md', "# Dictionary\n\n" + definitions.join("\n\n"));
 	}
 
 	function generateTodo() {
@@ -216,23 +179,14 @@ class Main {
 		sys.io.File.saveContent('todo.txt', todo);
 	}
 
-	function generateEPub(filePath:String) {
-		if (Sys.command("pandoc", ["-t", "epub", "-f", "markdown_github", "-o", '$out/${config.output.file}.epub', "--table-of-contents", "--epub-metadata=epub_metadata.xml", filePath].concat(['$out/dictionary.md'])) != 0)
-			throw "pandoc failed";
-	}
-
 	function isLinkable(sec:Section) {
 		return !sectionInfo.noContent.has(sec);
 	}
 
 	function link(sec:Section) {
 		if (!isLinkable(sec)) {
-			return switch (config.outputMode) {
-				case EPub | Mobi: '${sec.title}';
-				case Markdown: '[${sec.title}](#)';
-			}
+			return '[${sec.title}](#)';
 		}
-		var linkPrefix = config.outputMode == Markdown ? "" : "#";
 		return '[${sec.title}](${url(sec)})';
 	}
 
@@ -245,13 +199,10 @@ class Main {
 					} else {
 						'#';
 					}
-				case Definition if (config.outputMode == Markdown):
-					'dictionary.md#${escapeAnchor(label.name)}';
 				case Definition:
-					'dictionary.md-${escapeAnchor(label.name)}';
+					'dictionary.md#${escapeAnchor(label.name)}';
 				case Item(i): "" + i;
-				case Paragraph(sec, name) if (config.outputMode == Markdown): '${url(sec)}#${escapeAnchor(name)}';
-				case Paragraph(sec, name): '${url(sec)}';
+				case Paragraph(sec, name): '${url(sec)}#${escapeAnchor(name)}';
 			}
 		}
 		function labelLink(label:Label) {
@@ -259,9 +210,7 @@ class Main {
 				case Section(sec): link(sec);
 				case Definition: '[${label.name}](${labelUrl(label)})';
 				case Item(i): "" + i;
-				case Paragraph(sec, name) if (config.outputMode == Markdown):
-					'[$name](${url(sec)}#${escapeAnchor(name)})';
-				case Paragraph(sec, name): '[$name](#${url(sec)})';
+				case Paragraph(sec, name): '[$name](${url(sec)}#${escapeAnchor(name)})';
 			}
 		}
 		function map(r, f) {
@@ -281,14 +230,7 @@ class Main {
 			// TODO: nested folding?
 			return url(sec.parent) + "#" + escapeAnchor((sec.id.length > 0 ? sec.id + " " : "") + sec.title);
 		}
-		return switch (config.outputMode) {
-			case EPub | Mobi: sec.label;
-			case Markdown: sec.label + ".md";
-		}
-	}
-
-	static function escapeFileName(s:String) {
-		return s.replace("?", "").replace("/", "_").replace(" ", "_");
+		return sec.label + ".md";
 	}
 
 	static function escapeAnchor(s:String) {
@@ -306,6 +248,16 @@ class Main {
 			else {
 				sys.FileSystem.deleteFile(path);
 			}
+		}
+	}
+
+	static function copyRec(from:String, to:String) {
+		if (sys.FileSystem.isDirectory(from)) {
+			sys.FileSystem.createDirectory(to);
+			for (file in sys.FileSystem.readDirectory(from))
+				copyRec(from + "/" + file, to + "/" + file);
+		} else {
+			sys.io.File.copy(from, to);
 		}
 	}
 }

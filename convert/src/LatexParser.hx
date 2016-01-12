@@ -205,9 +205,10 @@ class LatexParser extends Parser<LexerTokenSource<LatexToken>, LatexToken> imple
 						}
 					}
 					if (validate) testCompile(s);
-					buffer.add("```haxe\n");
-					buffer.add(f);
-					buffer.add("\n```");
+					buffer.add('[include]($s)\n');
+					// buffer.add("```haxe\n");
+					// buffer.add(f);
+					// buffer.add("\n```");
 
 				// custom
 				case [TCustomCommand("define"), subject = popt(bracketArg), title = inBraces(text), label = inBraces(text2), content = inBraces(text2)]:

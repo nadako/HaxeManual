@@ -17,3 +17,5 @@ output/HaxeManual/ebook/dictionary.md
 output/HaxeManual/ebook/sections.txt
 HaxeManual/assets/bin/
 tests/RunTravis.n
+node_modules
+_book

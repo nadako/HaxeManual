@@ -18,12 +18,7 @@ class FlowchartHandler {
 		latexCompile(Resource.getString("tikzTemplate"), "\\begin{flowchart}" + s + "\\end{flowchart}", targetPath, targetName);
 		var filePath = targetPath + targetName + ".png";
 		var relativePath = "../../../HaxeManual/" + filePath;
-		switch (config.outputMode) {
-			case EPub | Mobi:
-				return '![$envtitle]($filePath)';
-			case Markdown:
-				return '<img src="$relativePath" alt="$envtitle" title="$envtitle" />\n\n_Figure: ${envtitle}_';
-		}
+		return '<img src="$relativePath" alt="$envtitle" title="$envtitle" />\n\n_Figure: ${envtitle}_';
 	}
 
 	static function latexCompile(template:String, content:String, targetPath:String, targetName:String) {
