@@ -12,4 +12,4 @@ git config user.email "nadako@gmail.com"
 git add .
 git commit -m "Build from ${rev}"
 
-git push --force --quiet "https://${GH_TOKEN}@github.com/nadako/HaxeManual.git" master:gh-pages > /dev/null 2>&1
+git push --force "https://${GH_TOKEN}@github.com/nadako/HaxeManual.git" master:gh-pages
