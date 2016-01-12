@@ -1,93 +1,19 @@
-language: haxe
-
-sudo: false
-
-matrix:
-  include:
-    - sudo: required
-      install:
-        - sudo apt-get install calibre -qq
-        - mkdir -p ~/Downloads
-        - cd ~/Downloads
-        # install fonts
-        - mkdir -p ~/.fonts
-        - wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
-        - unzip 1.030R-it.zip
-        - cp source-code-pro-2.010R-ro-1.030R-it/OTF/*.otf ~/.fonts/
-        - wget https://github.com/adobe-fonts/source-sans-pro/archive/2.010R-ro/1.065R-it.zip
-        - unzip 1.065R-it.zip
-        - cp source-sans-pro-2.010R-ro-1.065R-it/OTF/*.otf ~/.fonts/
-        - fc-cache -f -v
-        # texlive
-        - sudo add-apt-repository ppa:texlive-backports/ppa -y
-        - sudo apt-get update
-        - sudo apt-get install texlive-xetex texlive-latex-extra -y
-        # pandoc
-        - wget https://github.com/jgm/pandoc/releases/download/1.15.0.6/pandoc-1.15.0.6-1-amd64.deb
-        - sudo dpkg -i pandoc-1.15.0.6-1-amd64.deb
-        # mupdf
-        - curl -s -L --retry 3 http://mupdf.com/downloads/archive/mupdf-1.7a-source.tar.gz | tar -C . -x -z -f -
-        - cd mupdf-1.7a-source
-        - make HAVE_X11=no
-        - sudo make HAVE_X11=no install
-        # haxelibs
-        - haxelib git hxargs https://github.com/Simn/hxargs.git
-        - haxelib git hxparse https://github.com/Simn/hxparse.git
-        - cd $TRAVIS_BUILD_DIR
-      script:
-        - cd convert
-        - haxe convert.hxml -D recompileEnv
-
-    - env: TARGET=swf
-      haxe: 3.2.0
-    - env: TARGET=swf
-      haxe: development
-
-    - env: TARGET=as3
-      haxe: 3.2.0
-    - env: TARGET=as3
-      haxe: development
-
-    - env: TARGET=js
-      haxe: 3.2.0
-    - env: TARGET=js
-      haxe: development
-
-    - env: TARGET=neko
-      haxe: 3.2.0
-    - env: TARGET=neko
-      haxe: development
-
-    - env: TARGET=cpp
-      haxe: 3.2.0
-    - env: TARGET=cpp
-      haxe: development
-
-    - env: TARGET=cs
-      haxe: 3.2.0
-      addons: {apt: {packages: [mono-devel, mono-mcs]}}
-    - env: TARGET=cs
-      haxe: development
-      addons: {apt: {packages: [mono-devel, mono-mcs]}}
-
-    - env: TARGET=java
-      haxe: 3.2.0
-    - env: TARGET=java
-      haxe: development
-
-    - env: TARGET=python
-      haxe: 3.2.0
-    - env: TARGET=python
-      haxe: development
-
-install:
-  - haxelib install hxcpp > /dev/null
-  - haxelib install hxcs > /dev/null
-  - haxelib install hxjava > /dev/null
-  - haxelib install random > /dev/null
-  - haxelib list
-
+language: node_js
+node_js:
+- '4.1'
+install: npm install -g gitbook-cli
+before_script:
+  cd $TRAVIS_BUILD_DIR/gitbook
+  gitbook install
+  cd $TRAVIS_BUILD_DIR/gitbook-tutorial
+  gitbook install
 script:
-  - cd ./tests
-  - haxe RunTravis.hxml
-  - neko RunTravis.n $TARGET
+  cd $TRAVIS_BUILD_DIR/gitbook
+  gitbook build
+  cd $TRAVIS_BUILD_DIR/gitbook-tutorial
+  gitbook build
+after_success:
+- bash deploy.sh
+env:
+  global:
+  - secure: dWQe4jdrDM+98EUlSEsG91YBnCW9QcG0qmOggnGajbhvOJ2sv8dWTDtc3EnbpHjF985DTw4L5p261ZEUGdyL5NyvyI3PP7iXGqhMTFRjgWJZwRNGJ1bB489SY5krqRhOsM+O8CAMnfoz+Mna2jWJjK59P332adQ+g3mTGj788feX2Ez/8CPuVP4VqIDnKG5FspZf9rFe/EOok9C3PqMTVV6rUdHwcY1ObO8+trH8bURV87IqxBWK6iQB7yj+j8xN9bja+36Qxc2GyamuUiKaIOdi7QoS/lzCpISAHUE3iapMXzK3BteC1EqZTxJ6r2/F0HZGuWs7kr0+cy+++SVc1Oa1na2Zy236nEfFm97i7S/jep31QeYvuBTQL8GiCzkiTBtOmB0JnfHd8xwTOBHDuYQIzEqrgnWLI9RhIoSVvA5utNAWVSgSNyvXk6Rxo0hq20/tt0WidOp8SLcdOI39qkwTYaY6kvr6iTGxIsRFKhLQZ/tMKDzXJekY6Gf84JXmuLV9ezM7P04IHN0LebC0X6+U8ioR9QCl0k4xcwHxbcyyRC6DvtD2gfTpz3wZRQHz79tkeBwKrjbdVmnHgcycf4AeCDDrlcf8DR2RtkWIOVW+DZAoqJViCtsZGBp4U3I2AnveMzOzfxP231JxoNhPgwENX4kbdgn06o0FUvM9O7o=
