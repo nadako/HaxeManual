@@ -3,17 +3,18 @@ node_js:
 - '4.1'
 install: npm install -g gitbook-cli
 before_script:
-  cd $TRAVIS_BUILD_DIR/gitbook
-  gitbook install
-  cd $TRAVIS_BUILD_DIR/gitbook-tutorial
-  gitbook install
+  - cd $TRAVIS_BUILD_DIR/gitbook
+  - gitbook install
+  - cd $TRAVIS_BUILD_DIR/gitbook-tutorial
+  - gitbook install
 script:
-  cd $TRAVIS_BUILD_DIR/gitbook
-  gitbook build
-  cd $TRAVIS_BUILD_DIR/gitbook-tutorial
-  gitbook build
+  - cd $TRAVIS_BUILD_DIR/gitbook
+  - gitbook build
+  - cd $TRAVIS_BUILD_DIR/gitbook-tutorial
+  - gitbook build
 after_success:
-- bash deploy.sh
+  - cd $TRAVIS_BUILD_DIR
+  - bash deploy.sh
 env:
   global:
   - secure: dWQe4jdrDM+98EUlSEsG91YBnCW9QcG0qmOggnGajbhvOJ2sv8dWTDtc3EnbpHjF985DTw4L5p261ZEUGdyL5NyvyI3PP7iXGqhMTFRjgWJZwRNGJ1bB489SY5krqRhOsM+O8CAMnfoz+Mna2jWJjK59P332adQ+g3mTGj788feX2Ez/8CPuVP4VqIDnKG5FspZf9rFe/EOok9C3PqMTVV6rUdHwcY1ObO8+trH8bURV87IqxBWK6iQB7yj+j8xN9bja+36Qxc2GyamuUiKaIOdi7QoS/lzCpISAHUE3iapMXzK3BteC1EqZTxJ6r2/F0HZGuWs7kr0+cy+++SVc1Oa1na2Zy236nEfFm97i7S/jep31QeYvuBTQL8GiCzkiTBtOmB0JnfHd8xwTOBHDuYQIzEqrgnWLI9RhIoSVvA5utNAWVSgSNyvXk6Rxo0hq20/tt0WidOp8SLcdOI39qkwTYaY6kvr6iTGxIsRFKhLQZ/tMKDzXJekY6Gf84JXmuLV9ezM7P04IHN0LebC0X6+U8ioR9QCl0k4xcwHxbcyyRC6DvtD2gfTpz3wZRQHz79tkeBwKrjbdVmnHgcycf4AeCDDrlcf8DR2RtkWIOVW+DZAoqJViCtsZGBp4U3I2AnveMzOzfxP231JxoNhPgwENX4kbdgn06o0FUvM9O7o=
