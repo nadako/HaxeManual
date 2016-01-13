@@ -1,0 +1,3823 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Replace | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./std-regex-split.html" />
+    
+    
+    <link rel="prev" href="./std-regex-groups.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="10.12"
+        data-chapter-title="Replace"
+        data-filepath="std-regex-replace.md"
+        data-basepath="."
+        data-revision="Wed Jan 13 2016 10:24:53 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="introduction-what-is-haxe.html">
+            
+                
+                    <a href="./introduction-what-is-haxe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        What is Haxe?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction-about-this-document.html">
+            
+                
+                    <a href="./introduction-about-this-document.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        About this Document
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduction-authors-and-contributions.html">
+            
+                
+                    <a href="./introduction-authors-and-contributions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Authors and contributions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="introduction-license.html">
+            
+                
+                    <a href="./introduction-license.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        License
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="introduction-hello-world.html">
+            
+                
+                    <a href="./introduction-hello-world.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Hello World
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="introduction-haxe-history.html">
+            
+                
+                    <a href="./introduction-haxe-history.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        History
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="types.html">
+            
+                
+                    <a href="./types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Types
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="types-basic-types.html">
+            
+                
+                    <a href="./types-basic-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Basic Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="types-numeric-types.html">
+            
+                
+                    <a href="./types-numeric-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Numeric types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="types-overflow.html">
+            
+                
+                    <a href="./types-overflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Overflow
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="types-numeric-operators.html">
+            
+                
+                    <a href="./types-numeric-operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Numeric Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="types-bool.html">
+            
+                
+                    <a href="./types-bool.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Bool
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="types-void.html">
+            
+                
+                    <a href="./types-void.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        Void
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="types-nullability.html">
+            
+                
+                    <a href="./types-nullability.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Nullability
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="types-nullability-optional-arguments.html">
+            
+                
+                    <a href="./types-nullability-optional-arguments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Optional Arguments and Nullability
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="types-class-instance.html">
+            
+                
+                    <a href="./types-class-instance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Class Instance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="types-class-constructor.html">
+            
+                
+                    <a href="./types-class-constructor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Class constructor
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="types-class-inheritance.html">
+            
+                
+                    <a href="./types-class-inheritance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        Inheritance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="types-interfaces.html">
+            
+                
+                    <a href="./types-interfaces.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        Interfaces
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="types-enum-instance.html">
+            
+                
+                    <a href="./types-enum-instance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        Enum Instance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="types-enum-constructor.html">
+            
+                
+                    <a href="./types-enum-constructor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.14.</b>
+                        
+                        Enum Constructor
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="types-enum-using.html">
+            
+                
+                    <a href="./types-enum-using.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.15.</b>
+                        
+                        Using enums
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="types-anonymous-structure.html">
+            
+                
+                    <a href="./types-anonymous-structure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.16.</b>
+                        
+                        Anonymous Structure
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="types-structure-json.html">
+            
+                
+                    <a href="./types-structure-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.17.</b>
+                        
+                        JSON for Structure Values
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="types-structure-class-notation.html">
+            
+                
+                    <a href="./types-structure-class-notation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.18.</b>
+                        
+                        Class Notation for Structure Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="types-structure-optional-fields.html">
+            
+            <span><b>2.19.</b> Optional Fields</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="types-structure-performance.html">
+            
+                
+                    <a href="./types-structure-performance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.20.</b>
+                        
+                        Impact on Performance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="types-function.html">
+            
+                
+                    <a href="./types-function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.21.</b>
+                        
+                        Function Type
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="types-function-optional-arguments.html">
+            
+                
+                    <a href="./types-function-optional-arguments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.22.</b>
+                        
+                        Optional Arguments
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="types-function-default-values.html">
+            
+                
+                    <a href="./types-function-default-values.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.23.</b>
+                        
+                        Default values
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="types-dynamic.html">
+            
+                
+                    <a href="./types-dynamic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.24.</b>
+                        
+                        Dynamic
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="types-dynamic-with-type-parameter.html">
+            
+                
+                    <a href="./types-dynamic-with-type-parameter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.25.</b>
+                        
+                        Dynamic with Type Parameter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="types-dynamic-implemented.html">
+            
+                
+                    <a href="./types-dynamic-implemented.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.26.</b>
+                        
+                        Implementing Dynamic
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="types-abstract.html">
+            
+                
+                    <a href="./types-abstract.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.27.</b>
+                        
+                        Abstract
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="types-abstract-implicit-casts.html">
+            
+                
+                    <a href="./types-abstract-implicit-casts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.28.</b>
+                        
+                        Implicit Casts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="types-abstract-operator-overloading.html">
+            
+                
+                    <a href="./types-abstract-operator-overloading.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.29.</b>
+                        
+                        Operator Overloading
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="types-abstract-array-access.html">
+            
+                
+                    <a href="./types-abstract-array-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.30.</b>
+                        
+                        Array Access
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="types-abstract-selective-functions.html">
+            
+                
+                    <a href="./types-abstract-selective-functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.31.</b>
+                        
+                        Selective Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="types-abstract-enum.html">
+            
+                
+                    <a href="./types-abstract-enum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.32.</b>
+                        
+                        Enum abstracts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="types-abstract-forward.html">
+            
+                
+                    <a href="./types-abstract-forward.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.33.</b>
+                        
+                        Forwarding abstract fields
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="types-abstract-core-type.html">
+            
+                
+                    <a href="./types-abstract-core-type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.34.</b>
+                        
+                        Core-type abstracts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="types-monomorph.html">
+            
+                
+                    <a href="./types-monomorph.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.35.</b>
+                        
+                        Monomorph
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="type-system.html">
+            
+                
+                    <a href="./type-system.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Type System
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="type-system-typedef.html">
+            
+                
+                    <a href="./type-system-typedef.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Typedef
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="type-system-extensions.html">
+            
+                
+                    <a href="./type-system-extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Extensions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="type-system-type-parameters.html">
+            
+                
+                    <a href="./type-system-type-parameters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Type Parameters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="type-system-type-parameter-constraints.html">
+            
+                
+                    <a href="./type-system-type-parameter-constraints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Constraints
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="type-system-generic.html">
+            
+                
+                    <a href="./type-system-generic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Generic
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="type-system-generic-type-parameter-construction.html">
+            
+                
+                    <a href="./type-system-generic-type-parameter-construction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        Construction of generic type parameters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="type-system-variance.html">
+            
+                
+                    <a href="./type-system-variance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        Variance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="type-system-unification.html">
+            
+                
+                    <a href="./type-system-unification.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        Unification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="type-system-unification-between-classes-and-interfaces.html">
+            
+                
+                    <a href="./type-system-unification-between-classes-and-interfaces.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        Between Class/Interface
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="type-system-structural-subtyping.html">
+            
+                
+                    <a href="./type-system-structural-subtyping.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        Structural Subtyping
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="type-system-monomorphs.html">
+            
+                
+                    <a href="./type-system-monomorphs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                        Monomorphs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="type-system-unification-function-return.html">
+            
+                
+                    <a href="./type-system-unification-function-return.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.12.</b>
+                        
+                        Function Return
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="type-system-unification-common-base-type.html">
+            
+                
+                    <a href="./type-system-unification-common-base-type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.13.</b>
+                        
+                        Common Base Type
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="type-system-type-inference.html">
+            
+                
+                    <a href="./type-system-type-inference.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.14.</b>
+                        
+                        Type Inference
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="type-system-top-down-inference.html">
+            
+                
+                    <a href="./type-system-top-down-inference.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.15.</b>
+                        
+                        Top-down Inference
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="type-system-inference-limitations.html">
+            
+                
+                    <a href="./type-system-inference-limitations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.16.</b>
+                        
+                        Limitations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="type-system-modules-and-paths.html">
+            
+                
+                    <a href="./type-system-modules-and-paths.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.17.</b>
+                        
+                        Modules and Paths
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="type-system-module-sub-types.html">
+            
+                
+                    <a href="./type-system-module-sub-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.18.</b>
+                        
+                        Module Sub-Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="type-system-import.html">
+            
+                
+                    <a href="./type-system-import.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.19.</b>
+                        
+                        Import
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="type-system-resolution-order.html">
+            
+                
+                    <a href="./type-system-resolution-order.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.20.</b>
+                        
+                        Resolution Order
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="class-field.html">
+            
+                
+                    <a href="./class-field.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Class Fields
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="class-field-variable.html">
+            
+                
+                    <a href="./class-field-variable.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Variable
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="class-field-property.html">
+            
+                
+                    <a href="./class-field-property.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Property
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="class-field-property-common-combinations.html">
+            
+                
+                    <a href="./class-field-property-common-combinations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Common accessor identifier combinations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="class-field-property-type-system-impact.html">
+            
+                
+                    <a href="./class-field-property-type-system-impact.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Impact on the type system
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="class-field-property-rules.html">
+            
+                
+                    <a href="./class-field-property-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Rules for getter and setter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="class-field-method.html">
+            
+                
+                    <a href="./class-field-method.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        Method
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="class-field-overriding.html">
+            
+                
+                    <a href="./class-field-overriding.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        Overriding Methods
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="class-field-override-effects.html">
+            
+                
+                    <a href="./class-field-override-effects.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        Effects of variance and access modifiers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="class-field-access-modifier.html">
+            
+                
+                    <a href="./class-field-access-modifier.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        Access Modifier
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="class-field-visibility.html">
+            
+                
+                    <a href="./class-field-visibility.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        Visibility
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="class-field-inline.html">
+            
+                
+                    <a href="./class-field-inline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        Inline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="class-field-dynamic.html">
+            
+                
+                    <a href="./class-field-dynamic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        Dynamic
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="class-field-override.html">
+            
+                
+                    <a href="./class-field-override.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.13.</b>
+                        
+                        Override
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="class-field-static.html">
+            
+                
+                    <a href="./class-field-static.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        Static
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="expression.html">
+            
+                
+                    <a href="./expression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Expressions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="expression-block.html">
+            
+                
+                    <a href="./expression-block.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Blocks
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="expression-constants.html">
+            
+                
+                    <a href="./expression-constants.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Constants
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="expression-binops.html">
+            
+            <span><b>5.3.</b> Binary Operators</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="expression-unops.html">
+            
+            <span><b>5.4.</b> Unary Operators</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="expression-array-declaration.html">
+            
+                
+                    <a href="./expression-array-declaration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Array Declaration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="expression-object-declaration.html">
+            
+                
+                    <a href="./expression-object-declaration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Object Declaration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="expression-field-access.html">
+            
+                
+                    <a href="./expression-field-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Field Access
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="expression-array-access.html">
+            
+                
+                    <a href="./expression-array-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Array Access
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="expression-function-call.html">
+            
+                
+                    <a href="./expression-function-call.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        Function Call
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="expression-var.html">
+            
+                
+                    <a href="./expression-var.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        var
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="expression-function.html">
+            
+                
+                    <a href="./expression-function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        Local functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="expression-new.html">
+            
+                
+                    <a href="./expression-new.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.12.</b>
+                        
+                        new
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="expression-for.html">
+            
+                
+                    <a href="./expression-for.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.</b>
+                        
+                        for
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="expression-while.html">
+            
+                
+                    <a href="./expression-while.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.14.</b>
+                        
+                        while
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.15" data-path="expression-do-while.html">
+            
+                
+                    <a href="./expression-do-while.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.15.</b>
+                        
+                        do-while
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.16" data-path="expression-if.html">
+            
+                
+                    <a href="./expression-if.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.16.</b>
+                        
+                        if
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.17" data-path="expression-switch.html">
+            
+                
+                    <a href="./expression-switch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.17.</b>
+                        
+                        switch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.18" data-path="expression-try-catch.html">
+            
+                
+                    <a href="./expression-try-catch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.18.</b>
+                        
+                        try/catch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.19" data-path="expression-return.html">
+            
+                
+                    <a href="./expression-return.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.19.</b>
+                        
+                        return
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.20" data-path="expression-break.html">
+            
+                
+                    <a href="./expression-break.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.20.</b>
+                        
+                        break
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.21" data-path="expression-continue.html">
+            
+                
+                    <a href="./expression-continue.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.21.</b>
+                        
+                        continue
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.22" data-path="expression-throw.html">
+            
+                
+                    <a href="./expression-throw.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.22.</b>
+                        
+                        throw
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.23" data-path="expression-cast.html">
+            
+                
+                    <a href="./expression-cast.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.23.</b>
+                        
+                        cast
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.24" data-path="expression-cast-unsafe.html">
+            
+                
+                    <a href="./expression-cast-unsafe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.24.</b>
+                        
+                        unsafe cast
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.25" data-path="expression-cast-safe.html">
+            
+                
+                    <a href="./expression-cast-safe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.25.</b>
+                        
+                        safe cast
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.26" data-path="expression-type-check.html">
+            
+                
+                    <a href="./expression-type-check.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.26.</b>
+                        
+                        type check
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="lf.html">
+            
+                
+                    <a href="./lf.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Language Features
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="lf-condition-compilation.html">
+            
+                
+                    <a href="./lf-condition-compilation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Conditional Compilation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="lf-externs.html">
+            
+                
+                    <a href="./lf-externs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Externs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="lf-static-extension.html">
+            
+                
+                    <a href="./lf-static-extension.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        Static Extension
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="lf-static-extension-in-std.html">
+            
+                
+                    <a href="./lf-static-extension-in-std.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        In the Haxe Standard Library
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="lf-pattern-matching.html">
+            
+                
+                    <a href="./lf-pattern-matching.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Pattern Matching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="lf-pattern-matching-introduction.html">
+            
+                
+                    <a href="./lf-pattern-matching-introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="lf-pattern-matching-enums.html">
+            
+                
+                    <a href="./lf-pattern-matching-enums.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Enum matching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="lf-pattern-matching-variable-capture.html">
+            
+                
+                    <a href="./lf-pattern-matching-variable-capture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        Variable capture
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="lf-pattern-matching-structure.html">
+            
+                
+                    <a href="./lf-pattern-matching-structure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        Structure matching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="lf-pattern-matching-array.html">
+            
+                
+                    <a href="./lf-pattern-matching-array.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        Array matching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="lf-pattern-matching-or.html">
+            
+                
+                    <a href="./lf-pattern-matching-or.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        Or patterns
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="lf-pattern-matching-guards.html">
+            
+                
+                    <a href="./lf-pattern-matching-guards.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        Guards
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="lf-pattern-matching-tuples.html">
+            
+                
+                    <a href="./lf-pattern-matching-tuples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        Match on multiple values
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="lf-pattern-matching-extractors.html">
+            
+                
+                    <a href="./lf-pattern-matching-extractors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.</b>
+                        
+                        Extractors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="lf-pattern-matching-exhaustiveness.html">
+            
+                
+                    <a href="./lf-pattern-matching-exhaustiveness.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.15.</b>
+                        
+                        Exhaustiveness checks
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="lf-pattern-matching-unused.html">
+            
+                
+                    <a href="./lf-pattern-matching-unused.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.16.</b>
+                        
+                        Useless pattern checks
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="lf-string-interpolation.html">
+            
+                
+                    <a href="./lf-string-interpolation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.17.</b>
+                        
+                        String Interpolation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="lf-array-comprehension.html">
+            
+                
+                    <a href="./lf-array-comprehension.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.18.</b>
+                        
+                        Array Comprehension
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="lf-iterators.html">
+            
+                
+                    <a href="./lf-iterators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.19.</b>
+                        
+                        Iterators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="lf-function-bindings.html">
+            
+                
+                    <a href="./lf-function-bindings.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.20.</b>
+                        
+                        Function Bindings
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="lf-metadata.html">
+            
+                
+                    <a href="./lf-metadata.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.21.</b>
+                        
+                        Metadata
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="lf-access-control.html">
+            
+                
+                    <a href="./lf-access-control.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.22.</b>
+                        
+                        Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="lf-inline-constructor.html">
+            
+                
+                    <a href="./lf-inline-constructor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.23.</b>
+                        
+                        Inline constructors
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="compiler-usage.html">
+            
+                
+                    <a href="./compiler-usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Compiler Usage
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="compiler-usage-flags.html">
+            
+                
+                    <a href="./compiler-usage-flags.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Global Compiler Flags
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="cr-features.html">
+            
+                
+                    <a href="./cr-features.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Compiler Features
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="cr-metadata.html">
+            
+                
+                    <a href="./cr-metadata.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        Built-in Compiler Metadata
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="cr-dce.html">
+            
+                
+                    <a href="./cr-dce.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Dead Code Elimination
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="cr-completion.html">
+            
+                
+                    <a href="./cr-completion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        Compiler Services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="cr-completion-overview.html">
+            
+                
+                    <a href="./cr-completion-overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="cr-completion-field-access.html">
+            
+                
+                    <a href="./cr-completion-field-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        Field access completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="cr-completion-call-argument.html">
+            
+                
+                    <a href="./cr-completion-call-argument.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        Call argument completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="cr-completion-type-path.html">
+            
+                
+                    <a href="./cr-completion-type-path.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        Type path completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="cr-completion-usage.html">
+            
+                
+                    <a href="./cr-completion-usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        Usage completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="cr-completion-position.html">
+            
+                
+                    <a href="./cr-completion-position.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        Position completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="cr-completion-top-level.html">
+            
+                
+                    <a href="./cr-completion-top-level.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        Top-level completion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="cr-completion-server.html">
+            
+                
+                    <a href="./cr-completion-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.11.</b>
+                        
+                        Completion server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="cr-resources.html">
+            
+                
+                    <a href="./cr-resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.12.</b>
+                        
+                        Resources
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="cr-resources.html">
+            
+            <span><b>8.13.</b> Embedding resources</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="cr-resources.html">
+            
+            <span><b>8.14.</b> Retrieving text resources</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.15" data-path="cr-resources.html">
+            
+            <span><b>8.15.</b> Retrieving binary resources</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.16" data-path="cr-resources.html">
+            
+            <span><b>8.16.</b> Implementation details</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.17" data-path="cr-rtti.html">
+            
+                
+                    <a href="./cr-rtti.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.17.</b>
+                        
+                        Runtime Type Information
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.18" data-path="cr-rtti-structure.html">
+            
+                
+                    <a href="./cr-rtti-structure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.18.</b>
+                        
+                        RTTI structure
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.19" data-path="cr-static-analyzer.html">
+            
+                
+                    <a href="./cr-static-analyzer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.19.</b>
+                        
+                        Static analyzer
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="macro.html">
+            
+                
+                    <a href="./macro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Macros
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="macro-context.html">
+            
+                
+                    <a href="./macro-context.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Macro Context
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="macro-arguments.html">
+            
+                
+                    <a href="./macro-arguments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Arguments
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="macro-ExprOf.html">
+            
+                
+                    <a href="./macro-ExprOf.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        ExprOf
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="macro-constant-arguments.html">
+            
+                
+                    <a href="./macro-constant-arguments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Constant Expressions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="macro-rest-argument.html">
+            
+                
+                    <a href="./macro-rest-argument.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Rest Argument
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="macro-reification.html">
+            
+                
+                    <a href="./macro-reification.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.6.</b>
+                        
+                        Reification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="macro-reification-expression.html">
+            
+                
+                    <a href="./macro-reification-expression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.7.</b>
+                        
+                        Expression Reification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="macro-reification-type.html">
+            
+                
+                    <a href="./macro-reification-type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.8.</b>
+                        
+                        Type Reification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="macro-reification-class.html">
+            
+                
+                    <a href="./macro-reification-class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.9.</b>
+                        
+                        Class Reification
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="macro-tools.html">
+            
+                
+                    <a href="./macro-tools.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.10.</b>
+                        
+                        Tools
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="macro-type-building.html">
+            
+                
+                    <a href="./macro-type-building.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.11.</b>
+                        
+                        Type Building
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="macro-enum-building.html">
+            
+                
+                    <a href="./macro-enum-building.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.12.</b>
+                        
+                        Enum building
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.13" data-path="macro-auto-build.html">
+            
+                
+                    <a href="./macro-auto-build.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.13.</b>
+                        
+                        @:autoBuild
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.14" data-path="macro-generic-build.html">
+            
+                
+                    <a href="./macro-generic-build.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.14.</b>
+                        
+                        @:genericBuild
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.15" data-path="macro-limitations.html">
+            
+                
+                    <a href="./macro-limitations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.15.</b>
+                        
+                        Limitations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.16" data-path="macro-limitations-macro-in-macro.html">
+            
+            <span><b>9.16.</b> Macro-in-Macro</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.17" data-path="macro-limitations-static-extension.html">
+            
+                
+                    <a href="./macro-limitations-static-extension.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.17.</b>
+                        
+                        Static extension
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.18" data-path="macro-limitations-build-order.html">
+            
+                
+                    <a href="./macro-limitations-build-order.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.18.</b>
+                        
+                        Build Order
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.19" data-path="macro-limitations-type-parameters.html">
+            
+            <span><b>9.19.</b> Type Parameters</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.20" data-path="macro-initialization.html">
+            
+                
+                    <a href="./macro-initialization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.20.</b>
+                        
+                        Initialization macros
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="std.html">
+            
+                
+                    <a href="./std.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Standard Library
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="std-String.html">
+            
+                
+                    <a href="./std-String.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        String
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="std-ds.html">
+            
+                
+                    <a href="./std-ds.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        Data Structures
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="std-Array.html">
+            
+                
+                    <a href="./std-Array.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        Array
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="std-vector.html">
+            
+                
+                    <a href="./std-vector.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        Vector
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="std-List.html">
+            
+                
+                    <a href="./std-List.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        List
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="std-GenericStack.html">
+            
+                
+                    <a href="./std-GenericStack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        GenericStack
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="std-Map.html">
+            
+                
+                    <a href="./std-Map.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.7.</b>
+                        
+                        Map
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="std-Option.html">
+            
+                
+                    <a href="./std-Option.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.8.</b>
+                        
+                        Option
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="std-regex.html">
+            
+                
+                    <a href="./std-regex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.9.</b>
+                        
+                        Regular Expressions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="std-regex-match.html">
+            
+                
+                    <a href="./std-regex-match.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.10.</b>
+                        
+                        Matching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="std-regex-groups.html">
+            
+                
+                    <a href="./std-regex-groups.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.11.</b>
+                        
+                        Groups
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="10.12" data-path="std-regex-replace.html">
+            
+                
+                    <a href="./std-regex-replace.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.12.</b>
+                        
+                        Replace
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="std-regex-split.html">
+            
+                
+                    <a href="./std-regex-split.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.13.</b>
+                        
+                        Split
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="std-regex-map.html">
+            
+                
+                    <a href="./std-regex-map.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.14.</b>
+                        
+                        Map
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="std-regex-implementation-details.html">
+            
+                
+                    <a href="./std-regex-implementation-details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.15.</b>
+                        
+                        Implementation Details
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.16" data-path="std-math.html">
+            
+                
+                    <a href="./std-math.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.16.</b>
+                        
+                        Math
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.17" data-path="std-math-special-numbers.html">
+            
+                
+                    <a href="./std-math-special-numbers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.17.</b>
+                        
+                        Special Numbers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.18" data-path="std-math-mathematical-errors.html">
+            
+                
+                    <a href="./std-math-mathematical-errors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.18.</b>
+                        
+                        Mathematical Errors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.19" data-path="std-math-integer-math.html">
+            
+                
+                    <a href="./std-math-integer-math.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.19.</b>
+                        
+                        Integer Math
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.20" data-path="std-math-extensions.html">
+            
+                
+                    <a href="./std-math-extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.20.</b>
+                        
+                        Extensions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.21" data-path="std-Lambda.html">
+            
+                
+                    <a href="./std-Lambda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.21.</b>
+                        
+                        Lambda
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.22" data-path="std-template.html">
+            
+                
+                    <a href="./std-template.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.22.</b>
+                        
+                        Template
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.23" data-path="std-reflection.html">
+            
+                
+                    <a href="./std-reflection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.23.</b>
+                        
+                        Reflection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.24" data-path="std-serialization.html">
+            
+                
+                    <a href="./std-serialization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.24.</b>
+                        
+                        Serialization
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.25" data-path="std-serialization-format.html">
+            
+                
+                    <a href="./std-serialization-format.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.25.</b>
+                        
+                        Serialization format
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.26" data-path="std-Xml.html">
+            
+                
+                    <a href="./std-Xml.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.26.</b>
+                        
+                        Xml
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.27" data-path="std-Xml-getting-started.html">
+            
+                
+                    <a href="./std-Xml-getting-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.27.</b>
+                        
+                        Getting started with Xml
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.28" data-path="std-Xml-parsing.html">
+            
+                
+                    <a href="./std-Xml-parsing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.28.</b>
+                        
+                        Parsing Xml
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.29" data-path="std-Xml-encoding.html">
+            
+                
+                    <a href="./std-Xml-encoding.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.29.</b>
+                        
+                        Encoding Xml
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.30" data-path="std-Json.html">
+            
+                
+                    <a href="./std-Json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.30.</b>
+                        
+                        Json
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.31" data-path="std-Json-parsing.html">
+            
+                
+                    <a href="./std-Json-parsing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.31.</b>
+                        
+                        Parsing JSON
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.32" data-path="std-Json-encoding.html">
+            
+                
+                    <a href="./std-Json-encoding.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.32.</b>
+                        
+                        Encoding JSON
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.33" data-path="std-Json-implementation-details.html">
+            
+                
+                    <a href="./std-Json-implementation-details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.33.</b>
+                        
+                        Implementation details
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.34" data-path="std-input-output.html">
+            
+            <span><b>10.34.</b> Input/Output</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.35" data-path="std-sys.html">
+            
+            <span><b>10.35.</b> Sys/sys</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.36" data-path="std-remoting.html">
+            
+                
+                    <a href="./std-remoting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.36.</b>
+                        
+                        Remoting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.37" data-path="std-remoting-connection.html">
+            
+                
+                    <a href="./std-remoting-connection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.37.</b>
+                        
+                        Remoting Connection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.38" data-path="std-remoting-implementation-details.html">
+            
+                
+                    <a href="./std-remoting-implementation-details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.38.</b>
+                        
+                        Implementation details
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.39" data-path="std-unit-testing.html">
+            
+                
+                    <a href="./std-unit-testing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.39.</b>
+                        
+                        Unit testing
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="haxelib.html">
+            
+                
+                    <a href="./haxelib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Haxelib
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="haxelib-using-haxe.html">
+            
+                
+                    <a href="./haxelib-using-haxe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        Using a Haxe library with the Haxe Compiler
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="haxelib-json.html">
+            
+                
+                    <a href="./haxelib-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                        haxelib.json
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="haxelib-json-versioning.html">
+            
+                
+                    <a href="./haxelib-json-versioning.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                        Versioning
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="haxelib-json-dependencies.html">
+            
+                
+                    <a href="./haxelib-json-dependencies.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                        Dependencies
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="haxelib-extraParams.html">
+            
+                
+                    <a href="./haxelib-extraParams.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                        extraParams.hxml
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="haxelib-using.html">
+            
+                
+                    <a href="./haxelib-using.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                        Using Haxelib
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="target-details.html">
+            
+                
+                    <a href="./target-details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Target Details
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="target-javascript.html">
+            
+                
+                    <a href="./target-javascript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="target-javascript-getting-started.html">
+            
+                
+                    <a href="./target-javascript-getting-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        Getting started with Haxe/JavaScript
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="target-javascript-external-libraries.html">
+            
+                
+                    <a href="./target-javascript-external-libraries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        Using external JavaScript libraries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="target-javascript-injection.html">
+            
+                
+                    <a href="./target-javascript-injection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Inject raw JavaScript
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="target-javascript-untyped.html">
+            
+                
+                    <a href="./target-javascript-untyped.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        JavaScript untyped functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="target-javascript-debugging.html">
+            
+                
+                    <a href="./target-javascript-debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Debugging JavaScript
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.7" data-path="target-javascript-metadata.html">
+            
+                
+                    <a href="./target-javascript-metadata.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.7.</b>
+                        
+                        JavaScript target Metadata
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.8" data-path="target-javascript-expose.html">
+            
+                
+                    <a href="./target-javascript-expose.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.8.</b>
+                        
+                        Exposing Haxe classes for JavaScript
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.9" data-path="target-javascript-require.html">
+            
+                
+                    <a href="./target-javascript-require.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.9.</b>
+                        
+                        Loading extern classes using &quot;require&quot; function
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.10" data-path="target-flash.html">
+            
+                
+                    <a href="./target-flash.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.10.</b>
+                        
+                        Flash
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.11" data-path="target-flash-getting-started.html">
+            
+                
+                    <a href="./target-flash-getting-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.11.</b>
+                        
+                        Getting started with Haxe/Flash
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.12" data-path="target-flash-resources.html">
+            
+                
+                    <a href="./target-flash-resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.12.</b>
+                        
+                        Embedding resources
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.13" data-path="target-flash-external-libraries.html">
+            
+                
+                    <a href="./target-flash-external-libraries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.13.</b>
+                        
+                        Using external Flash libraries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.14" data-path="target-flash-metadata.html">
+            
+                
+                    <a href="./target-flash-metadata.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.14.</b>
+                        
+                        Flash target Metadata
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.15" data-path="target-neko.html">
+            
+            <span><b>12.15.</b> Neko</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.16" data-path="target-php.html">
+            
+                
+                    <a href="./target-php.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.16.</b>
+                        
+                        PHP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.17" data-path="target-php-getting-started.html">
+            
+                
+                    <a href="./target-php-getting-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.17.</b>
+                        
+                        Getting started with Haxe/PHP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.18" data-path="target-php-untyped.html">
+            
+                
+                    <a href="./target-php-untyped.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.18.</b>
+                        
+                        PHP untyped functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.19" data-path="target-cpp.html">
+            
+                
+                    <a href="./target-cpp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.19.</b>
+                        
+                        C++
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.20" data-path="target-cpp-defines.html">
+            
+                
+                    <a href="./target-cpp-defines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.20.</b>
+                        
+                        Using C++ Defines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.21" data-path="target-cpp-pointers.html">
+            
+            <span><b>12.21.</b> Using C++ Pointers</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.22" data-path="target-java.html">
+            
+            <span><b>12.22.</b> Java</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.23" data-path="target-cs.html">
+            
+            <span><b>12.23.</b> C#</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.24" data-path="target-python.html">
+            
+            <span><b>12.24.</b> Python</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="dictionary.html">
+            
+                
+                    <a href="./dictionary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dictionary
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="1033-replace">10.3.3 Replace</h2>
+<p>A regular expression can also be used to replace a part of the string:</p>
+<p><pre><code class="lang-hx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> str = <span class="hljs-string">&quot;aaabcbcbcbz&quot;</span>;
+    <span class="hljs-comment">// g : replace all instances</span>
+    <span class="hljs-keyword">var</span> r = ~/b[^c]/g;
+    <span class="hljs-comment">// &quot;aaabcbcbcxx&quot;</span>
+    <span class="hljs-keyword">trace</span>(r.replace(str,<span class="hljs-string">&quot;xx&quot;</span>));
+  }
+}
+</code></pre>
+</p>
+<p>We can use <code>$X</code> to reuse a matched group in the replacement:</p>
+<p><pre><code class="lang-hx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> str = <span class="hljs-string">&quot;{hello} {0} {again}&quot;</span>;
+    <span class="hljs-keyword">var</span> r = ~/{([a-z]+)}/g;
+    <span class="hljs-comment">// &quot;*hello* {0} *again*&quot;</span>
+    <span class="hljs-keyword">trace</span>(r.replace(str,<span class="hljs-string">&quot;*$1*&quot;</span>));
+  }
+}
+</code></pre>
+</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./std-regex-groups.html" class="navigation navigation-prev " aria-label="Previous page: Groups"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./std-regex-split.html" class="navigation navigation-next " aria-label="Next page: Split"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"haxemanual":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
