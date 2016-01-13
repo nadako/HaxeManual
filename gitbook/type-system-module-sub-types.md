@@ -19,10 +19,10 @@ private typedef T { ... }
 private abstract A { ... }
 ```
 
-> ##### Define: Private type
->
-> A type can be made private by using the `private` modifier. As a result, the type can only be directly accessed from within the [module](dictionary.md#define-module) it is defined in.
-> 
-> Private types, unlike public ones, do not become a member of their containing package.
+{% define "Private type" %}
+A type can be made private by using the `private` modifier. As a result, the type can only be directly accessed from within the [module](dictionary.md#define-module) it is defined in.
+
+Private types, unlike public ones, do not become a member of their containing package.
+{% enddefine %}
 
 The accessibility of types can be controlled more fine-grained by using [access control](lf-access-control.md).

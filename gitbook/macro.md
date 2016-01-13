@@ -2,9 +2,9 @@
 
 Macros are without a doubt the most advanced feature in Haxe. They are often perceived as dark magic that only a select few are capable of mastering, yet there is nothing magical (and certainly nothing dark) about them.
 
-> ##### Define: Abstract Syntax Tree (AST)
->
-> The AST is the result of **parsing** Haxe code into a typed structure. This structure is exposed to macros through the types defined in the file `haxe/macro/Expr.hx` of the Haxe Standard Library.
+{% define "Abstract Syntax Tree (AST)" %}
+The AST is the result of **parsing** Haxe code into a typed structure. This structure is exposed to macros through the types defined in the file `haxe/macro/Expr.hx` of the Haxe Standard Library.
+{% enddefine %}
 
 <img src="../../../HaxeManual/assets/graphics/generated/macro-compilation-role.png" alt="The role of macros during compilation." title="The role of macros during compilation." />
 

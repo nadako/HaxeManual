@@ -8,13 +8,13 @@ Next to [variables](class-field-variable.md), properties are the second option f
 
 When dealing with properties, it is important to understand the two kinds of access:
 
-> ##### Define: Read Access
->
-> A read access to a field occurs when a right-hand side [field access expression](expression-field-access.md) is used. This includes calls in the form of `obj.field()`, where `field` is accessed to be read.
+{% define "Read Access" %}
+A read access to a field occurs when a right-hand side [field access expression](expression-field-access.md) is used. This includes calls in the form of `obj.field()`, where `field` is accessed to be read.
+{% enddefine %}
 
-> ##### Define: Write Access
->
-> A write access to a field occurs when a [field access expression](expression-field-access.md) is assigned a value in the form of `obj.field = value`. It may also occur in combination with [read access](dictionary.md#define-read-access) for special assignment operators such as `+=` in expressions like `obj.field += value`.
+{% define "Write Access" %}
+A write access to a field occurs when a [field access expression](expression-field-access.md) is assigned a value in the form of `obj.field = value`. It may also occur in combination with [read access](dictionary.md#define-read-access) for special assignment operators such as `+=` in expressions like `obj.field += value`.
+{% enddefine %}
  
 
 Read access and write access are directly reflected in the syntax, as the following example shows:
@@ -37,9 +37,9 @@ The access identifiers define the behavior when the field is read (first identif
 * `dynamic`: Like `get`/`set` access, but does not verify the existence of the accessor field.
 * `never`: Allows no access at all.
 
-> ##### Define: Accessor method
->
-> An **accessor method** (or short **accessor**) for a field named `field` of type `T` is a **getter** named `get_field` of type `Void->T` or a **setter** named `set_field` of type `T->T`.
+{% define "Accessor method" %}
+An **accessor method** (or short **accessor**) for a field named `field` of type `T` is a **getter** named `get_field` of type `Void->T` or a **setter** named `set_field` of type `T->T`.
+{% enddefine %}
 
 > ##### Trivia: Accessor names
 >

@@ -12,9 +12,9 @@ Occasionally, we demonstrate how Haxe code is generated, for which we usually sh
 
 Furthermore, we define a set of terms in this document. Predominantly, this is done when introducing a new type or when a term is specific to Haxe. We do not define every new aspect we introduce, e.g. what a class is, to avoid cluttering the text. A definition looks like this:
 
-> ##### Define: Definition name
->
-> Definition description
+{% define "Definition name" %}
+Definition description
+{% enddefine %}
 
 In a few places, this document has **trivia**-boxes. These include off-the-record information such as why certain decisions were made during Haxe's development or how a particular feature has been changed in past Haxe versions. This information is generally not important and can be skipped as it is only meant to convey trivia:
 

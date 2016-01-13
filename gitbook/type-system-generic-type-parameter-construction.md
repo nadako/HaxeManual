@@ -1,8 +1,8 @@
 ## 3.3.1 Construction of generic type parameters
 
-> ##### Define: Generic Type Parameter
->
-> A type parameter is said to be generic if its containing class or method is generic.
+{% define "Generic Type Parameter" %}
+A type parameter is said to be generic if its containing class or method is generic.
+{% enddefine %}
 
 It is not possible to construct normal type parameters, e.g. `new T()` is a compiler error. The reason for this is that Haxe generates only a single function and the construct makes no sense in that case. This is different when the type parameter is generic: Since we know that the compiler will generate a distinct function for each type parameter combination, it is possible to replace the `T` `new T()` with the real type.
 

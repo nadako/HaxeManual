@@ -16,10 +16,10 @@ If `Array` had no `push()` method and no other means of modification, the assign
 
 We can safely assign with `b` being typed as `MyArray<Base>` and `MyArray` only having a `pop()` method. There is no method defined on `MyArray` which could be used to add incompatible types, it is thus said to be **covariant**.
 
-> ##### Define: Covariance
->
-> A [compound type](dictionary.md#define-compound-type) is considered covariant if its component types can be assigned to less specific components, i.e. if they are only read, but never written.
+{% define "Covariance" %}
+A [compound type](dictionary.md#define-compound-type) is considered covariant if its component types can be assigned to less specific components, i.e. if they are only read, but never written.
+{% enddefine %}
 
-> ##### Define: Contravariance
->
-> A [compound type](dictionary.md#define-compound-type) is considered contravariant if its component types can be assigned to less generic components, i.e. if they are only written, but never read.
+{% define "Contravariance" %}
+A [compound type](dictionary.md#define-compound-type) is considered contravariant if its component types can be assigned to less generic components, i.e. if they are only written, but never read.
+{% enddefine %}

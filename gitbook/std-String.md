@@ -1,8 +1,8 @@
 ## 10.1 String
 
-> ##### Define: String
->
-> A String is a sequence of characters.
+{% define "String" %}
+A String is a sequence of characters.
+{% enddefine %}
 
 ##### Character code
 Use the `.code` property on a constant single-char string in order to compile its ASCII character code:

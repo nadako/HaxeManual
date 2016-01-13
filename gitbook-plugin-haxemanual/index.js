@@ -14,6 +14,12 @@ module.exports = {
             var content = fs.readFileSync(filename, 'utf-8');
             var md = '```' + lang + '\n' + content + '\n```';
             return this.book.formatString('markdown', md);
+        },
+        define: function(block) {
+            var title = block.args[0];
+            var md = "> #### Define: " + title + "\n";
+            md += block.body.split("\n").join("\n> ");
+            return this.book.formatString('markdown', md);
         }
     }
 };

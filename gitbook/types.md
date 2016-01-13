@@ -27,6 +27,6 @@ The Haxe type system knows seven type groups:
 
 We will describe each of these type groups and how they relate to each other in the next chapters.
 
-> ##### Define: Compound Type
->
-> A compound type is a type which has sub-types. This includes any type with [type parameters](type-system-type-parameters.md) and the [function](types-function.md) type.
+{% define "Compound Type" %}
+A compound type is a type which has sub-types. This includes any type with [type parameters](type-system-type-parameters.md) and the [function](types-function.md) type.
+{% enddefine %}

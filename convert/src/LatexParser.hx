@@ -218,11 +218,7 @@ class LatexParser extends Parser<LexerTokenSource<LatexToken>, LatexToken> imple
 						content: content
 					});
 					labelMap[label] = mkLabel(label, Definition);
-					buffer.add('> ##### Define: $title\n');
-					buffer.add('>\n');
-					content = content.replace("\r", "").split("\n").join("\n> ");
-					buffer.add('> $content');
-					buffer.add("\n");
+					buffer.add('{% define "$title" %}\n$content\n{% enddefine %}\n');
 				case [TCustomCommand("trivia"), title = popt(bracketArg), s = inBraces(text), s2 = inBraces(text2)]:
 					buffer.add('> ##### Trivia: $s\n');
 					buffer.add('>\n');

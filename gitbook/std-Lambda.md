@@ -1,8 +1,8 @@
 ## 10.5 Lambda
 
-> ##### Define: Lambda
->
-> Lambda is a functional language concept within Haxe that allows you to apply a function to a list or [iterators](lf-iterators.md). The Lambda class is a collection of functional methods in order to use functional-style programming with Haxe.
+{% define "Lambda" %}
+Lambda is a functional language concept within Haxe that allows you to apply a function to a list or [iterators](lf-iterators.md). The Lambda class is a collection of functional methods in order to use functional-style programming with Haxe.
+{% enddefine %}
 
 It is ideally used with `using Lambda` (see [Static Extension](lf-static-extension.md)) and then acts as an extension to `Iterable` types. 
 

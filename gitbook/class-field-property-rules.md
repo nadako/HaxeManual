@@ -8,15 +8,14 @@ Both getter and setter may access their physical field for data storage. The com
 
 However, the compiler assumes that a physical field exists only if at least one of the access identifiers is `default` or `null`.
 
-> ##### Define: Physical field
->
-> A field is considered to be **physical** if it is either
-> 
-> * a [variable](class-field-variable.md)
-> * a [property](class-field-property.md) with the read-access or write-access identifier being `default` or `null`
-> * a [property](class-field-property.md) with `:isVar` [metadata](lf-metadata.md)
-> 
-> 
+{% define "Physical field" %}
+A field is considered to be **physical** if it is either
+
+* a [variable](class-field-variable.md)
+* a [property](class-field-property.md) with the read-access or write-access identifier being `default` or `null`
+* a [property](class-field-property.md) with `:isVar` [metadata](lf-metadata.md)
+
+{% enddefine %}
 
 If this is not the case, access to the field from within an accessor method causes a compilation error:
 

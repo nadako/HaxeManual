@@ -1,31 +1,30 @@
 ## 2.2 Nullability
 
-> ##### Define: nullable
->
-> A type in Haxe is considered **nullable** if `null` is a valid value for it.
+{% define "nullable" %}
+A type in Haxe is considered **nullable** if `null` is a valid value for it.
+{% enddefine %}
 
 It is common for programming languages to have a single, clean definition for nullability. However, Haxe has to find a compromise in this regard due to the nature of Haxe's target languages: While some of them allow and; in fact, default to `null` for anything, others do not even allow `null` for certain types. This necessitates the distinction of two types of target languages:
 
-> ##### Define: Static target
->
-> Static targets employ their own type system where `null` is not a valid value for basic types. This is true for the Flash, C++, Java and C# targets.
+{% define "Static target" %}
+Static targets employ their own type system where `null` is not a valid value for basic types. This is true for the Flash, C++, Java and C# targets.
+{% enddefine %}
 
-> ##### Define: Dynamic target
->
-> Dynamic targets are more lenient with their types and allow `null` values for basic types. This applies to the JavaScript, PHP, Neko and Flash 6-8 targets.
+{% define "Dynamic target" %}
+Dynamic targets are more lenient with their types and allow `null` values for basic types. This applies to the JavaScript, PHP, Neko and Flash 6-8 targets.
+{% enddefine %}
 
 There is nothing to worry about when working with `null` on dynamic targets; however, static ones may require some thought. For starters, basic types are initialized to their default values.
 
-> ##### Define: Default values
->
-> 
-> Basic types have the following default values on static targets:
-> 
-> * `Int`: `0`
-> * `Float`: `NaN` on Flash, `0.0` on other static targets
-> * `Bool`: `false`
-> 
-> 
+{% define "Default values" %}
+
+Basic types have the following default values on static targets:
+
+* `Int`: `0`
+* `Float`: `NaN` on Flash, `0.0` on other static targets
+* `Bool`: `false`
+
+{% enddefine %}
 
 As a consequence, the Haxe Compiler does not allow the assignment of `null` to a basic type on static targets. In order to achieve this, the basic type has to be wrapped as `Null<T>`:
 
@@ -47,9 +46,9 @@ if( b != null ) { ... } // allowed
 
 This restriction extends to all situations where [unification](type-system-unification.md) is performed.
 
-> ##### Define: `Null<T>`
->
-> On static targets the types `Null<Int>`, `Null<Float>` and `Null<Bool>` can be used to allow `null` as a value. On dynamic targets this has no effect. `Null<T>` can also be used with other types in order to document that `null` is an allowed value.
+{% define "`Null<T>`" %}
+On static targets the types `Null<Int>`, `Null<Float>` and `Null<Bool>` can be used to allow `null` as a value. On dynamic targets this has no effect. `Null<T>` can also be used with other types in order to document that `null` is an allowed value.
+{% enddefine %}
 
 If a `null`-value is "hidden" in `Null<T>` or `Dynamic` and assigned to a basic type, the default value is used:
 

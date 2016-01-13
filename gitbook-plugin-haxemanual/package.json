@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-plugin-codeasset",
+  "name": "gitbook-plugin-haxemanual",
   "main": "index.js",
   "version": "1.0.0",
   "engines": {

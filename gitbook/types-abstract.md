@@ -11,9 +11,9 @@ We can derive the following from this example:
 * Enclosed in curly braces `{}` are the fields,
 * which are a constructor function `new` accepting one argument `i` of type `Int`.
 
-> ##### Define: Underlying Type
->
-> The underlying type of an abstract is the type which is used to represent said abstract at runtime. It is usually a concrete (i.e. non-abstract) type but could be another abstract type as well.
+{% define "Underlying Type" %}
+The underlying type of an abstract is the type which is used to represent said abstract at runtime. It is usually a concrete (i.e. non-abstract) type but could be another abstract type as well.
+{% enddefine %}
 
 The syntax is reminiscent of classes and the semantics are indeed similar. In fact, everything in the "body" of an abstract (that is everything after the opening curly brace) is parsed as class fields. Abstracts may have [method](class-field-method.md) fields and non-[physical](dictionary.md#define-physical-field) [property](class-field-property.md) fields.
 

@@ -1,8 +1,8 @@
 ## 3.5.2 Structural Subtyping
 
-> ##### Define: Structural Subtyping
->
-> Structural subtyping defines an implicit relation between types that have the same structure.
+{% define "Structural Subtyping" %}
+Structural subtyping defines an implicit relation between types that have the same structure.
+{% enddefine %}
 
 Structural sub-typing in Haxe is allowed when unifying
 
